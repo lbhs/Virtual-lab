@@ -18,20 +18,23 @@ public class BeakerScript : MonoBehaviour
 		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+		transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 6.5f);
 
 	}
 
 	void OnMouseDrag()
 	{
-		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
-		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+		Vector3 worldPoint = Camera.main.ScreenToWorldPoint(curScreenPoint);
+		Vector3 curPosition = new Vector3(worldPoint.x + offset.x, worldPoint.y + offset.y, gameObject.transform.position.z);
 		transform.position = curPosition;
 
 	}
 	
 	void OnMouseUp()
 	{
+		transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 8);
 		//transform.position = nearestOpenSnapPosition();
 	}
 	
