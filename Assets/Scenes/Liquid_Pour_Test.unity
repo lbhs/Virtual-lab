@@ -818,6 +818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592783535}
   - component: {fileID: 592783534}
+  - component: {fileID: 592783536}
   m_Layer: 0
   m_Name: ReactionManager
   m_TagString: Untagged
@@ -857,6 +858,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592783536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592783533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52fa164afc164192664914d49f4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &616932121
 GameObject:
   m_ObjectHideFlags: 0
@@ -6148,7 +6161,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1012757458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 592783536}
+        m_MethodName: PlayAVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1012757458
 MonoBehaviour:
   m_ObjectHideFlags: 0
