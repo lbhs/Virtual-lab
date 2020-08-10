@@ -12,21 +12,11 @@ public class BeakerScript : MonoBehaviour
 	public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
-		{new Vector3(-6f, 9.5f, 8f), false},
-		{new Vector3(-4f, 9.5f, 8f), false},
 		{new Vector3(-2f, 9.5f, 8f), false},
-		{new Vector3(0f, 9.5f, 8f), false},
-		{new Vector3(2f, 9.5f, 8f), false},
+		{new Vector3(-4f, 9.5f, 8f), false},
 		
 		//lower shelf snapping positions
-		{new Vector3(6f, 2.69f, 7f), false},
-		{new Vector3(4f, 2.69f, 7f), false},
-		{new Vector3(2f, 2.69f, 7f), false},
-		{new Vector3(0f, 2.69f, 7f), false},
-		{new Vector3(-2f, 2.69f, 7f), false},
-		{new Vector3(-4f, 2.69f, 7f), false},
-		{new Vector3(-6f, 2.69f, 7f), false},
-		{new Vector3(-8f, 2.69f, 7f), false}
+		{new Vector3(-8f, 2.69f, 7f), false},
 	};
 	
 	//on start, teleport the beaker into the nearest available snapping position
