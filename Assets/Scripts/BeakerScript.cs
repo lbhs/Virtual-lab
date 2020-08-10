@@ -7,9 +7,10 @@ public class BeakerScript : MonoBehaviour
 	private Vector3 screenPoint;
 	private Vector3 offset;
 	private Vector3 lastSnapPosition;
-	
-	//dictionary keeps track of available snapping positions with boolean to describe occupancy
-	public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
+    public GameObject Particle;
+    public float pourThreshold = 45;
+    //dictionary keeps track of available snapping positions with boolean to describe occupancy
+    public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
 		{new Vector3(-2f, 9.5f, 8f), false},
@@ -75,5 +76,26 @@ public class BeakerScript : MonoBehaviour
 		snapPositions[lastSnapPosition] = false;
 		transform.position = nearestOpenSnapPosition();
 		snapPositions[transform.position] = true;
-	}
+        if (transform.position == new Vector3(-7.25f, 5.25f, 7f))
+        {
+            ReactionManagerScript.LiquidObject = transform;
+        }
+    }
+
+    private void Update()
+    {
+        if (CaculatePourAngles() >= pourThreshold)
+        {
+            Particle.SetActive(true);
+        }
+        else
+        {
+            Particle.SetActive(false);
+        }
+    }
+    float CaculatePourAngles()
+    {
+        print(transform.right.y* Mathf.Rad2Deg);
+        return transform.right.y * Mathf.Rad2Deg;
+    }
 }

@@ -75,5 +75,9 @@ public class MetalScript : MonoBehaviour
         snapPositions[lastSnapPosition] = false;
         transform.position = nearestOpenSnapPosition();
         snapPositions[transform.position] = true;
+        if(transform.position == new Vector3(5f, 2.69f, 7f))
+        {
+            ReactionManagerScript.MetalObject = transform;
+        }
     }
 }
