@@ -16,7 +16,7 @@ public class BeakerScript : MonoBehaviour
 		{new Vector3(-4f, 9.5f, 8f), false},
 		
 		//lower shelf snapping positions
-		{new Vector3(-8f, 2.69f, 7f), false},
+		{new Vector3(-7.25f, 5.25f, 7f), false},
 	};
 	
 	//on start, teleport the beaker into the nearest available snapping position
