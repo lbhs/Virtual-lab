@@ -16,7 +16,7 @@ public class MetalScript : MonoBehaviour
         {new Vector3(2f, 9.5f, 8f), false},
 		
 		//lower shelf snapping positions
-        {new Vector3(5f, 2.69f, 7f), false},
+        {new Vector3(3f, 4.3f, 7f), false},
     };
 
     //on start, teleport the beaker into the nearest available snapping position
@@ -75,7 +75,7 @@ public class MetalScript : MonoBehaviour
         snapPositions[lastSnapPosition] = false;
         transform.position = nearestOpenSnapPosition();
         snapPositions[transform.position] = true;
-        if(transform.position == new Vector3(5f, 2.69f, 7f))
+        if(transform.position == new Vector3(3f, 4.3f, 7f))
         {
             ReactionManagerScript.MetalObject = transform;
         }
