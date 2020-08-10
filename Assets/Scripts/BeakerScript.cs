@@ -80,6 +80,10 @@ public class BeakerScript : MonoBehaviour
         {
             ReactionManagerScript.LiquidObject = transform;
         }
+        else if(ReactionManagerScript.LiquidObject == gameObject.transform)
+        {
+            ReactionManagerScript.LiquidObject = null;
+        }
     }
 
     private void Update()
