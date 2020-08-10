@@ -17,6 +17,14 @@ public class MetalScript : MonoBehaviour
 		
 		//lower shelf snapping positions
         {new Vector3(3f, 4.3f, 7f), false},
+        {new Vector3(2f, 4.3f, 7f), false},
+        {new Vector3(4f, 4.3f, 7f), false},
+        {new Vector3(3f, 4.3f, 8f), false},
+        {new Vector3(2f, 4.3f, 8f), false},
+        {new Vector3(4f, 4.3f, 8f), false},
+        {new Vector3(3f, 4.3f, 9f), false},
+        {new Vector3(2f, 4.3f, 9f), false},
+        {new Vector3(4f, 4.3f, 9f), false},
     };
 
     //on start, teleport the beaker into the nearest available snapping position
