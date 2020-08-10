@@ -31,9 +31,8 @@ public class ReactionManagerScript : MonoBehaviour
             reactionState = ReactionState.inital;
         }
 
-        if (reactionState == ReactionState.choseReactants)
+        if(LiquidObject != null)
         {
-            //LiquidObject.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
             LiquidCanvas.SetActive(true);
         }
         else
@@ -41,7 +40,11 @@ public class ReactionManagerScript : MonoBehaviour
             LiquidCanvas.SetActive(false);
         }
 
-        if (reactionState == ReactionState.reactionStarting)
+        if (reactionState == ReactionState.choseReactants)
+        {
+            //LiquidObject.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+        }
+        else if (reactionState == ReactionState.reactionStarting)
         {
 
         }
