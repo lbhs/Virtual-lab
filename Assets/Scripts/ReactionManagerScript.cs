@@ -10,6 +10,8 @@ public class ReactionManagerScript : MonoBehaviour
     public static Transform LiquidObject;
     public ScaleScript scale;
     public GameObject LiquidCanvas;
+    public static bool isReadyForReaction=false;
+    public GameObject StartReactionCanvas;
     //public float rotateSpeed=90;
 
     // Start is called before the first frame update
@@ -42,6 +44,14 @@ public class ReactionManagerScript : MonoBehaviour
 
         if (reactionState == ReactionState.choseReactants)
         {
+            if (isReadyForReaction && scale.listOfObjectsOnHere.Count > 0)
+            {
+                StartReactionCanvas.SetActive(true);
+            }
+            else
+            {
+                StartReactionCanvas.SetActive(false);
+            }
             //LiquidObject.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
         }
         else if (reactionState == ReactionState.reactionStarting)

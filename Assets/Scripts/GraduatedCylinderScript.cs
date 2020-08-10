@@ -47,6 +47,7 @@ public class GraduatedCylinderScript : MonoBehaviour
             if(HowFullPercent >= pouringPercent)
             {
                 isPouring = false;
+                ReactionManagerScript.isReadyForReaction = true;
                 ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 0);
             }
         }
@@ -76,6 +77,7 @@ public class GraduatedCylinderScript : MonoBehaviour
         }
 
         ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 359.9f);
+        ReactionManagerScript.isReadyForReaction = false;
         isPouring = true;
     }
 }
