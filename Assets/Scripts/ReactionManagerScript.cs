@@ -12,6 +12,7 @@ public class ReactionManagerScript : MonoBehaviour
     public GameObject LiquidCanvas;
     public static bool isReadyForReaction=false;
     public GameObject StartReactionCanvas;
+    public GameObject Cylinder;
     //public float rotateSpeed=90;
 
     // Start is called before the first frame update
@@ -36,10 +37,12 @@ public class ReactionManagerScript : MonoBehaviour
         if(LiquidObject != null)
         {
             LiquidCanvas.SetActive(true);
+            Cylinder.SetActive(true);
         }
         else
         {
             LiquidCanvas.SetActive(false);
+            Cylinder.SetActive(false);
         }
 
         if (reactionState == ReactionState.choseReactants)
