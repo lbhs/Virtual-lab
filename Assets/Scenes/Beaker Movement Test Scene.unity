@@ -10696,7 +10696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particle: {fileID: 616932121}
-  pourThreshold: 45
+  pourThreshold: -20
 --- !u!54 &1389743350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11258,4 +11258,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particle: {fileID: 1121614659}
-  pourThreshold: 45
+  pourThreshold: -20

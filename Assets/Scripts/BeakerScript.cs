@@ -84,7 +84,7 @@ public class BeakerScript : MonoBehaviour
 
     private void Update()
     {
-        if (CaculatePourAngles() >= pourThreshold)
+        if (CaculatePourAngles() <= pourThreshold)
         {
             Particle.SetActive(true);
         }
@@ -95,7 +95,6 @@ public class BeakerScript : MonoBehaviour
     }
     float CaculatePourAngles()
     {
-        print(transform.right.y* Mathf.Rad2Deg);
         return transform.right.y * Mathf.Rad2Deg;
     }
 }
