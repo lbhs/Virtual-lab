@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GraduatedCylinderScript : MonoBehaviour
 {
-    [Range(0,1)]
+    [Range(0,0.99f)]
     public float HowFullPercent;
     public float fillRate = 0.01f;
     public Transform LiquidScaler;
@@ -14,8 +14,8 @@ public class GraduatedCylinderScript : MonoBehaviour
     void Update()
     {
         //cap percent between 0 and 1
-        if (HowFullPercent > 1)
-            HowFullPercent = 1;
+        if (HowFullPercent > 0.99f)
+            HowFullPercent = 0.99f;
         else if (HowFullPercent < 0)
             HowFullPercent = 0;
 
