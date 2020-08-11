@@ -4,36 +4,49 @@ using UnityEngine;
 
 public class BeakerScript : MonoBehaviour
 {
-	private Vector3 screenPoint;
-	private Vector3 offset;
-	private Vector3 lastSnapPosition;
-	
-	//dictionary keeps track of available snapping positions with boolean to describe occupancy
-	public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
+    private Vector3 screenPoint;
+    private Vector3 offset;
+    private Vector3 lastSnapPosition;
+
+    //dictionary keeps track of available snapping positions with boolean to describe occupancy
+    public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
 		{new Vector3(-6f, 9.5f, 8f), false},
-		{new Vector3(-4f, 9.5f, 8f), false},
-		{new Vector3(-2f, 9.5f, 8f), false},
-		{new Vector3(0f, 9.5f, 8f), false},
-		{new Vector3(2f, 9.5f, 8f), false},
+        {new Vector3(-4f, 9.5f, 8f), false},
+        {new Vector3(-2f, 9.5f, 8f), false},
+        {new Vector3(0f, 9.5f, 8f), false},
+        {new Vector3(2f, 9.5f, 8f), false},
 		
 		//lower shelf snapping positions
 		{new Vector3(6f, 2.69f, 7f), false},
-		{new Vector3(4f, 2.69f, 7f), false},
-		{new Vector3(2f, 2.69f, 7f), false},
-		{new Vector3(0f, 2.69f, 7f), false},
-		{new Vector3(-2f, 2.69f, 7f), false},
-		{new Vector3(-4f, 2.69f, 7f), false},
-		{new Vector3(-6f, 2.69f, 7f), false},
-		{new Vector3(-8f, 2.69f, 7f), false}
-	};
+        {new Vector3(4f, 2.69f, 7f), false},
+        {new Vector3(2f, 2.69f, 7f), false},
+        {new Vector3(0f, 2.69f, 7f), false},
+        {new Vector3(-2f, 2.69f, 7f), false},
+        {new Vector3(-4f, 2.69f, 7f), false},
+        {new Vector3(-6f, 2.69f, 7f), false},
+        {new Vector3(-8f, 2.69f, 7f), false}
+    };
+
+    private List<Vector3> upperShelfPositions = new List<Vector3>() {
+        new Vector3(-6f, 9.5f, 8f),
+        new Vector3(-4f, 9.5f, 8f),
+        new Vector3(-2f, 9.5f, 8f),
+        new Vector3(0f, 9.5f, 8f),
+        new Vector3(2f, 9.5f, 8f)
+    };
+
+    private GameSceneController gameSceneController;
 	
 	//on start, teleport the beaker into the nearest available snapping position
 	void Start()
 	{
-		snapIntoPosition();
-	}
+        gameSceneController = FindObjectOfType<GameSceneController>();
+        // Starts on top shelf
+        gameSceneController.RegisterBeaker(gameObject, false);
+        snapIntoPosition();
+    }
 	
 	//when user clicks on trhe beaker start the ability to drag by measuring offset and teleport towards camera off the shelf
 	void OnMouseDown()
@@ -85,5 +98,16 @@ public class BeakerScript : MonoBehaviour
 		snapPositions[lastSnapPosition] = false;
 		transform.position = nearestOpenSnapPosition();
 		snapPositions[transform.position] = true;
-	}
+
+        // Check if beaker was drawn to upper or lower shelf
+        if (upperShelfPositions.Contains(transform.position))
+            gameSceneController.RegisterBeaker(gameObject, false);
+        else
+            gameSceneController.RegisterBeaker(gameObject, true);
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = lastSnapPosition;
+    }
 }
