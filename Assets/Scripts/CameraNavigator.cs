@@ -11,12 +11,14 @@ public class CameraNavigator : MonoBehaviour
     private bool manualControlEnabled;
     // Will be used to reset camera position after undo operation
     private Vector3 startPosition;
+    private Quaternion startDirection;
 
     private void Start()
     {
         manualControlEnabled = true;
         // Used to undo an operation
         startPosition = transform.position;
+        startDirection = transform.rotation;
     }
 
     // Update is called once per frame
@@ -91,6 +93,13 @@ public class CameraNavigator : MonoBehaviour
         {
             // Adjust third argument to change camera speed
             transform.position = Vector3.MoveTowards(transform.position, startPosition, .05f);
+            yield return new WaitForEndOfFrame();
+        }
+
+        while (transform.rotation != startDirection)
+        {
+            // Adjust third argument to change camera speed
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, startDirection, .05f);
             yield return new WaitForEndOfFrame();
         }
 

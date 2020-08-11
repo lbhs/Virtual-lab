@@ -11,7 +11,7 @@ public class GameSceneController : MonoBehaviour
     private GameObject bottomTable;
 
     // History of moved GameObjects for undo button
-    private Queue<GameObject> mostRecentlyMoved = new Queue<GameObject>();
+    private Stack<GameObject> mostRecentlyMoved = new Stack<GameObject>();
 
     private IDictionary<GameObject, bool> beakerStatus = new Dictionary<GameObject, bool>();
 
@@ -27,11 +27,11 @@ public class GameSceneController : MonoBehaviour
         }
 
         if (onWorkspace)
-            mostRecentlyMoved.Enqueue(beaker);
+            mostRecentlyMoved.Push(beaker);
 
         if (CheckIfTwoBeakersDrawn())
         {
-            StartCoroutine(cameraController.MoveToObject(beaker));
+            StartCoroutine(cameraController.MoveToObject(bottomTable));
             //cameraController.MoveToObject(beaker);
         }
     }
@@ -53,7 +53,7 @@ public class GameSceneController : MonoBehaviour
         if (mostRecentlyMoved.Count > 0)
         {
             // Place object back on top shelf
-            mostRecentlyMoved.Dequeue().GetComponent<BeakerScript>().ResetPosition();
+            mostRecentlyMoved.Pop().GetComponent<BeakerScript>().ResetPosition();
 
             // Zoom out camera
             StartCoroutine(cameraController.ReturnToOriginalPosition());

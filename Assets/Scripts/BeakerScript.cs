@@ -109,5 +109,7 @@ public class BeakerScript : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = lastSnapPosition;
+        // No longer on workspace
+        gameSceneController.RegisterBeaker(gameObject, false);
     }
 }
