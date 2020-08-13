@@ -11,6 +11,7 @@ public class GraduatedCylinderScript : MonoBehaviour
     public Renderer LiquidRenderer;
     private bool isPouring = false;
     private float pouringPercent;
+    public GameObject BackButton;
     // Update is called once per frame
     void Update()
     {
@@ -55,9 +56,11 @@ public class GraduatedCylinderScript : MonoBehaviour
             }
             if (HowFullPercent >= pouringPercent)
             {
+                BackButton.SetActive(true);
                 isPouring = false;
-                ReactionManagerScript.isReadyForReaction = true;
+                ReactionManagerScript.LiquidisReady = true;
                 ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 0);
+                ReactionManagerScript.LiquidObject.position = new Vector3(-7.25f, 2.7f, 7f);
             }
         }
     }
@@ -86,7 +89,9 @@ public class GraduatedCylinderScript : MonoBehaviour
         }
 
         ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 359.9f);
-        ReactionManagerScript.isReadyForReaction = false;
+        ReactionManagerScript.LiquidisReady = false;
+
+        BackButton.SetActive(false);
         isPouring = true;
     }
 }
