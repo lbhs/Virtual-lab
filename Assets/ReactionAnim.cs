@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Video;
 public class ReactionAnim : MonoBehaviour
 {
     private bool isPlaying = false;
+    public string[] videoNames;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,6 @@ public class ReactionAnim : MonoBehaviour
 
     void StartVideo()
     {
-        GetComponent<PlayVideoScript>().PlayAVideo();
+        GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
     }
 }
