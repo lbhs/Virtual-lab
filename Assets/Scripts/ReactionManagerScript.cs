@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ReactionState {inital, choseLiquid, choseWeight, reactionStarting, videoPlaying};
+public enum ReactionState {inital, choseLiquid, choseMass, reactionStarting, videoPlaying};
 
 public class ReactionManagerScript : MonoBehaviour
 {
@@ -12,7 +12,9 @@ public class ReactionManagerScript : MonoBehaviour
     public static Transform MetalObject;
     public GameObject LiquidCanvas;
     public GameObject StartReactionCanvas;
-    public GameObject ContinueCanvas;
+    public GameObject ContinueCanvasOne;
+    public GameObject ContinueCanvasTwo;
+    public GameObject MassCanvas;
     public ScaleScript scale;
     public GameObject Cylinder;
     //public float rotateSpeed=90;
@@ -31,12 +33,12 @@ public class ReactionManagerScript : MonoBehaviour
         //print(LiquidObject);
         if (reactionState == ReactionState.inital && LiquidObject != null && MetalObject != null)
         {
-            ContinueCanvas.SetActive(true);
+            ContinueCanvasOne.SetActive(true);
             LiquidCanvas.SetActive(false);
         }
         else if(reactionState == ReactionState.inital && MetalObject == null || LiquidObject == null)
         {
-            ContinueCanvas.SetActive(false);
+            ContinueCanvasOne.SetActive(false);
         }
         
         if(reactionState == ReactionState.inital)
@@ -45,20 +47,25 @@ public class ReactionManagerScript : MonoBehaviour
         }
         else if (reactionState == ReactionState.choseLiquid)
         {
-            ContinueCanvas.SetActive(false);
+            ContinueCanvasOne.SetActive(false);
             Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(Cylinder.transform);
             toggleMovment(false);
             LiquidCanvas.SetActive(true);
             Cylinder.SetActive(true);
-            //if (isReadyForReaction && scale.listOfObjectsOnHere.Count > 0)
-            //{
-            //    StartReactionCanvas.SetActive(true);
-            //}
-            //else
-            //{
-            //    StartReactionCanvas.SetActive(false);
-            //}
-            //LiquidObject.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+            if(LiquidisReady == true)
+            {
+                ContinueCanvasTwo.SetActive(true);
+            }
+            else
+            {
+                ContinueCanvasTwo.SetActive(false);
+            }
+        }
+        else if(reactionState == ReactionState.choseMass)
+        {
+            MassCanvas.SetActive(true);
+            scale.gameObject.SetActive(true);
+            Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(scale.transform);
         }
     }
 
@@ -81,10 +88,26 @@ public class ReactionManagerScript : MonoBehaviour
     {
         reactionState = ReactionState.inital;
         Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(transform);
+        ContinueCanvasTwo.SetActive(false);
     }
-
-    public void ContinueButton()
+    public void GoBackToLiquid()
     {
         reactionState = ReactionState.choseLiquid;
+        Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(Cylinder.transform);
+        //ContinueCanvasTwo.SetActive(false);
+        MassCanvas.SetActive(false);
+    }
+    public void ContinueButtonOne()
+    {
+        reactionState = ReactionState.choseLiquid;
+        Cylinder.GetComponent<GraduatedCylinderScript>().HowFullPercent = 0;
+        LiquidisReady = false;
+    }
+
+    public void ContinueButtonTwo()
+    {
+        reactionState = ReactionState.choseMass;
+        ContinueCanvasTwo.SetActive(false);
+        LiquidCanvas.SetActive(false);
     }
 }

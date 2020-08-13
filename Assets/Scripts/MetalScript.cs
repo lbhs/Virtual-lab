@@ -66,7 +66,7 @@ public class MetalScript : MonoBehaviour
     public Vector3 nearestOpenSnapPosition()
     {
         float minDistance = 100000f;
-        Vector3 nearestPosition = new Vector3 (0,0,-200);
+        Vector3 nearestPosition = Vector3.zero;
         foreach (KeyValuePair<Vector3, bool> position in snapPositions)
         {
             float curDistance = Vector3.Distance(gameObject.transform.position, position.Key);
