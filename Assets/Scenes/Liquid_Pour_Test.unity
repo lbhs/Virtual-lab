@@ -839,9 +839,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionState: 0
-  scale: {fileID: 1543660872001176229}
   LiquidCanvas: {fileID: 15178431}
   StartReactionCanvas: {fileID: 1327978184}
+  scale: {fileID: 1543660872001176229}
   Cylinder: {fileID: 1371880949}
 --- !u!4 &592783535
 Transform:

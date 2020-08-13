@@ -44,7 +44,16 @@ public class GraduatedCylinderScript : MonoBehaviour
             {
                 ReactionManagerScript.LiquidObject.Rotate(0, 0, -90 * Time.deltaTime);
             }
-            if(HowFullPercent >= pouringPercent)
+            if (ReactionManagerScript.LiquidObject.position.y < 5.5f)
+            {
+                ReactionManagerScript.LiquidObject.position += new Vector3(0, 5,0) * Time.deltaTime;
+            }
+            else
+            {
+                Vector3 pos = ReactionManagerScript.LiquidObject.position;
+                ReactionManagerScript.LiquidObject.position = new Vector3(pos.x, 5.5f, pos.z);
+            }
+            if (HowFullPercent >= pouringPercent)
             {
                 isPouring = false;
                 ReactionManagerScript.isReadyForReaction = true;
