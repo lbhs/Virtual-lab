@@ -34,8 +34,8 @@ public class ReactionManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(LiquidObject);
-        print(MetalObject);
+       // print(LiquidObject);
+       // print(MetalObject);
         if (reactionState == ReactionState.inital && LiquidObject != null && MetalObject != null)
         {
             ContinueCanvasOne.SetActive(true);
