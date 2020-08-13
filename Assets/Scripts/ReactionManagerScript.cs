@@ -11,6 +11,8 @@ public class ReactionManagerScript : MonoBehaviour
     public static bool MassisReady = false;
     public static Transform LiquidObject;
     public static Transform MetalObject;
+    public static float liquidAmount;
+    public static float MassAmount;
     public GameObject LiquidCanvas;
     public GameObject StartReactionCanvas;
     public GameObject ContinueCanvasOne;
@@ -32,7 +34,8 @@ public class ReactionManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print(LiquidObject);
+        print(LiquidObject);
+        print(MetalObject);
         if (reactionState == ReactionState.inital && LiquidObject != null && MetalObject != null)
         {
             ContinueCanvasOne.SetActive(true);
@@ -111,6 +114,7 @@ public class ReactionManagerScript : MonoBehaviour
     {
         reactionState = ReactionState.choseLiquid;
         Cylinder.GetComponent<GraduatedCylinderScript>().HowFullPercent = 0;
+        liquidAmount = 0;
         LiquidisReady = false;
     }
 

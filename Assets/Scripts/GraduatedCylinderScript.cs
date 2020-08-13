@@ -87,7 +87,7 @@ public class GraduatedCylinderScript : MonoBehaviour
         {
             pouringPercent = percentToFill;
         }
-
+        ReactionManagerScript.liquidAmount = pouringPercent;
         ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 359.9f);
         ReactionManagerScript.LiquidisReady = false;
 

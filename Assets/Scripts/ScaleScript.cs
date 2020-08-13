@@ -40,6 +40,7 @@ public class ScaleScript : MonoBehaviour
         massObjects[3].SetActive(false);
         DisplayText.text = "2.00 g";
         ReactionManagerScript.MassisReady = true;
+        ReactionManagerScript.MassAmount = 2;
     }
     public void setFourGrams()
     {
@@ -49,6 +50,7 @@ public class ScaleScript : MonoBehaviour
         massObjects[3].SetActive(true);
         DisplayText.text = "4.00 g";
         ReactionManagerScript.MassisReady = true;
+        ReactionManagerScript.MassAmount = 4;
     }
 
     public void setNoGrams()
@@ -59,5 +61,6 @@ public class ScaleScript : MonoBehaviour
         massObjects[3].SetActive(false);
         DisplayText.text = "000 g";
         ReactionManagerScript.MassisReady = false;
+        ReactionManagerScript.MassAmount = 0;
     }
 }
