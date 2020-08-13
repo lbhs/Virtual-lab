@@ -43,6 +43,7 @@ public class ReactionManagerScript : MonoBehaviour
         }
         else if (reactionState == ReactionState.choseLiquid)
         {
+            Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(Cylinder.transform);
             toggleMovment(false);
             LiquidCanvas.SetActive(true);
             Cylinder.SetActive(true);

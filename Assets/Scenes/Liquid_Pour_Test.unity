@@ -6012,6 +6012,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6119,6 +6120,19 @@ VideoPlayer:
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c14fcaf45e39414c8a471430b9d6b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 963194227}
 --- !u!1 &1012757455
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,6 +11635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ba091c5964c2f458244e163144df85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
   Particle: {fileID: 616932121}
   pourThreshold: -20
 --- !u!54 &1389743350
@@ -11840,6 +11855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268149c1be332f64bb00a0d470852108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
 --- !u!1 &1532974913
 GameObject:
   m_ObjectHideFlags: 0
@@ -12234,6 +12250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268149c1be332f64bb00a0d470852108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
 --- !u!54 &1963789159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12581,6 +12598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ba091c5964c2f458244e163144df85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
   Particle: {fileID: 1121614659}
   pourThreshold: -20
 --- !u!1 &1543660872001176228
