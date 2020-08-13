@@ -8,6 +8,7 @@ public class ReactionManagerScript : MonoBehaviour
 {
     public ReactionState reactionState;
     public static bool LiquidisReady=false;
+    public static bool MassisReady = false;
     public static Transform LiquidObject;
     public static Transform MetalObject;
     public GameObject LiquidCanvas;
@@ -15,6 +16,7 @@ public class ReactionManagerScript : MonoBehaviour
     public GameObject ContinueCanvasOne;
     public GameObject ContinueCanvasTwo;
     public GameObject MassCanvas;
+    public GameObject StartReactionButton;
     public ScaleScript scale;
     public GameObject Cylinder;
     //public float rotateSpeed=90;
@@ -66,6 +68,14 @@ public class ReactionManagerScript : MonoBehaviour
             MassCanvas.SetActive(true);
             scale.gameObject.SetActive(true);
             Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(scale.transform);
+            if(MassisReady == true)
+            {
+                StartReactionButton.SetActive(true);
+            }
+            else
+            {
+                StartReactionButton.SetActive(false);
+            }
         }
     }
 
@@ -109,5 +119,15 @@ public class ReactionManagerScript : MonoBehaviour
         reactionState = ReactionState.choseMass;
         ContinueCanvasTwo.SetActive(false);
         LiquidCanvas.SetActive(false);
+        scale.setNoGrams();
     }
+
+    public void StartReactionButtonFunction()
+    {
+        reactionState = ReactionState.reactionStarting;
+        MassCanvas.SetActive(false);
+        Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(transform); //change this to the beaker's transform
+        GetComponent<ReactionAnim>().startAnimation();
+    }
+    
 }
