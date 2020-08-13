@@ -45,22 +45,22 @@ public class GraduatedCylinderScript : MonoBehaviour
             {
                 ReactionManagerScript.LiquidObject.Rotate(0, 0, -90 * Time.deltaTime);
             }
-            if (ReactionManagerScript.LiquidObject.position.y < 5.5f)
+            if (ReactionManagerScript.LiquidObject.position.y < 4.5f)
             {
                 ReactionManagerScript.LiquidObject.position += new Vector3(0, 5,0) * Time.deltaTime;
             }
-            else
-            {
-                Vector3 pos = ReactionManagerScript.LiquidObject.position;
-                ReactionManagerScript.LiquidObject.position = new Vector3(pos.x, 5.5f, pos.z);
-            }
+           // else
+           // {
+               // Vector3 pos = ReactionManagerScript.LiquidObject.position;
+                //ReactionManagerScript.LiquidObject.position = new Vector3(pos.x, 4.5f, pos.z);
+           // }
             if (HowFullPercent >= pouringPercent)
             {
                 BackButton.SetActive(true);
                 isPouring = false;
                 ReactionManagerScript.LiquidisReady = true;
                 ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 0);
-                ReactionManagerScript.LiquidObject.position = new Vector3(-7.25f, 2.7f, 7f);
+                ReactionManagerScript.LiquidObject.position = new Vector3(-7.25f, 1.7f, 6.5f);
             }
         }
     }

@@ -14,11 +14,11 @@ public class BeakerScript : MonoBehaviour
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
-		{new Vector3(-2f, 9.5f, 8f), false},
-		{new Vector3(-4f, 9.5f, 8f), false},
+		{new Vector3(-2f, 8.5f, 7.5f), false},
+		{new Vector3(-4f, 8.5f, 7.5f), false},
 		
 		//lower shelf snapping positions
-		{new Vector3(-7.25f, 2.7f, 7f), false},
+		{new Vector3(-7.25f, 1.7f, 6.5f), false},
 	};
 	
 	//on start, teleport the beaker into the nearest available snapping position
@@ -86,7 +86,7 @@ public class BeakerScript : MonoBehaviour
 		snapPositions[lastSnapPosition] = false;
 		transform.position = nearestOpenSnapPosition();
 		snapPositions[transform.position] = true;
-        if (transform.position == new Vector3(-7.25f, 2.7f, 7f))
+        if (transform.position == new Vector3(-7.25f, 1.7f, 6.5f))
         {
             ReactionManagerScript.LiquidObject = transform;
         }
