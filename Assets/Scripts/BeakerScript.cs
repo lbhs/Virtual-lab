@@ -10,6 +10,7 @@ public class BeakerScript : MonoBehaviour
     public bool CanMove = true;
     public GameObject Particle;
     public float pourThreshold = 45;
+	public Vector3 snapOffset;
     //dictionary keeps track of available snapping positions with boolean to describe occupancy
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
@@ -33,7 +34,7 @@ public class BeakerScript : MonoBehaviour
         if (CanMove)
         {
             //keep track of last position so we can make it available for other beakers
-            lastSnapPosition = transform.position;
+            lastSnapPosition = transform.position - snapOffset;
 
             //translate mouse position into world position and manually edit z to 6.5f so that the beaker is off of the shelf while in hand
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -84,9 +85,9 @@ public class BeakerScript : MonoBehaviour
 	public void snapIntoPosition()
 	{
 		snapPositions[lastSnapPosition] = false;
-		transform.position = nearestOpenSnapPosition();
-		snapPositions[transform.position] = true;
-        if (transform.position == new Vector3(-7.25f, 1.7f, 6.5f))
+		transform.position = nearestOpenSnapPosition() + snapOffset;
+		snapPositions[transform.position - snapOffset] = true;
+        if (transform.position - snapOffset == new Vector3(-7.25f, 1.7f, 6.5f))
         {
             ReactionManagerScript.LiquidObject = transform;
         }
