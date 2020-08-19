@@ -18,6 +18,7 @@ public class Wobble : MonoBehaviour
     float wobbleAmountToAddZ;
     float pulse;
     float time = 0.5f;
+    public float bubbleSpeed = 2;
 
     // Use this for initialization
     void Start()
@@ -52,6 +53,11 @@ public class Wobble : MonoBehaviour
         // keep last position
         lastPos = transform.position;
         lastRot = transform.rotation.eulerAngles;
+
+        //bubble speed
+        Vector2 newOffset = rend.material.GetTextureOffset("_MainTex");
+        newOffset.y -= (bubbleSpeed/20) * Time.deltaTime;
+        rend.material.SetTextureOffset("_MainTex", newOffset);
     }
 
 
