@@ -567,8 +567,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
+  - {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1445,7 +1445,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6851,6 +6851,7 @@ MonoBehaviour:
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
+  bubbleSpeed: 2
 --- !u!1 &850970822
 GameObject:
   m_ObjectHideFlags: 0
@@ -8695,7 +8696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HowFullPercent: 0
-  fillRate: 0.01
+  fillRate: 0.002
   LiquidScaler: {fileID: 0}
   LiquidRenderer: {fileID: 850970825}
   BackButton: {fileID: 1346543409}
@@ -8987,6 +8988,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7554433783213119420, guid: a140c1770d96805448cb8401533520a9,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463891334767038283, guid: a140c1770d96805448cb8401533520a9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
+    - target: {fileID: 8463891334767038283, guid: a140c1770d96805448cb8401533520a9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a140c1770d96805448cb8401533520a9, type: 3}
 --- !u!1 &1601710184
@@ -10057,6 +10073,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3265743949670651872, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265743949670651873, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
+    - target: {fileID: 3265743949670651873, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
     - target: {fileID: 3642835469029516014, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
         type: 3}
       propertyPath: m_Name
