@@ -32,7 +32,7 @@ Transform:
   m_LocalPosition: {x: -3.1238644, y: 8.420771, z: 7.4909544}
   m_LocalScale: {x: 0.015000003, y: 0.015, z: 0.015000003}
   m_Children:
-  - {fileID: 8677464043815989211}
+  - {fileID: 8677464045047497716}
   - {fileID: 7000675259674322990}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4884,37 +4884,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!1 &8677464043815989208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8677464043815989211}
-  m_Layer: 0
-  m_Name: liquid_scaler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8677464043815989211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8677464043815989208}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.1, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8677464045047497716}
-  m_Father: {fileID: 2289744506890016097}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &8677464045047497717
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,6 +4895,7 @@ GameObject:
   - component: {fileID: 8677464045047497716}
   - component: {fileID: 8677464045047497718}
   - component: {fileID: 8677464045047497719}
+  - component: {fileID: 133140642532497993}
   m_Layer: 0
   m_Name: liquid
   m_TagString: Untagged
@@ -4940,11 +4910,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8677464045047497717}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36, y: 47, z: 37}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -39.100014, y: 47, z: 36}
   m_LocalScale: {x: 56.666668, y: 40, z: 56.666668}
   m_Children: []
-  m_Father: {fileID: 8677464043815989211}
+  m_Father: {fileID: 2289744506890016097}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8677464045047497718
@@ -4973,7 +4943,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f4a96e26c771904fb22f0e2bc56889a, type: 2}
+  - {fileID: 2100000, guid: 513e048b4d4fe27489d3a40a6a814175, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4994,3 +4964,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &133140642532497993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677464045047497717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d99bc91a673b14aa35ebdd4964d208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.03
+  WobbleSpeed: 1
+  Recovery: 1
