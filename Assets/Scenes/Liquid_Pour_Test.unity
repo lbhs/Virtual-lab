@@ -5663,7 +5663,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb55461f657f6dd43baa67a4ac9e77eb, type: 2}
+  - {fileID: 2100000, guid: 24f875ac0c928244e995135737bc319a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6756,37 +6756,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730882661}
   m_CullTransparentMesh: 0
---- !u!1 &795949170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 795949171}
-  m_Layer: 0
-  m_Name: LiquidScaler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &795949171
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795949170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.91, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
-  m_Children:
-  - {fileID: 850970823}
-  m_Father: {fileID: 1371880953}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &843974162
 GameObject:
   m_ObjectHideFlags: 0
@@ -6908,10 +6877,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850970822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.91, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.9105691, z: 0.8}
+  m_LocalPosition: {x: 0, y: -0.81899995, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.091056906, z: 0.8}
   m_Children: []
-  m_Father: {fileID: 795949171}
+  m_Father: {fileID: 1371880953}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &850970825
@@ -6932,7 +6901,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f4a96e26c771904fb22f0e2bc56889a, type: 2}
+  - {fileID: 2100000, guid: 513e048b4d4fe27489d3a40a6a814175, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7191,7 +7160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a064a2c808ca4d47bfb19a9a086896f, type: 2}
+  - {fileID: 2100000, guid: c96bae0f4722947d78ae0e663b67f771, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8708,7 +8677,7 @@ Transform:
   m_LocalPosition: {x: -6, y: 3.23, z: 7}
   m_LocalScale: {x: 1, y: 1.5375, z: 1}
   m_Children:
-  - {fileID: 795949171}
+  - {fileID: 850970823}
   - {fileID: 287292301}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -8720,14 +8689,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371880949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 367a9a11e1178744497b2f5ddbeb5010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HowFullPercent: 0
   fillRate: 0.01
-  LiquidScaler: {fileID: 795949171}
+  LiquidScaler: {fileID: 0}
   LiquidRenderer: {fileID: 850970825}
   BackButton: {fileID: 1346543409}
 --- !u!65 &1371880955
@@ -9380,7 +9349,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 990dec1d97ae5734992a715e47601466, type: 2}
+  - {fileID: 2100000, guid: 92eeeca318557b84fa52f9750036bc06, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

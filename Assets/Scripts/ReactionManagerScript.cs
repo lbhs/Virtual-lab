@@ -113,7 +113,7 @@ public class ReactionManagerScript : MonoBehaviour
     public void ContinueButtonOne()
     {
         reactionState = ReactionState.choseLiquid;
-        Cylinder.GetComponent<GraduatedCylinderScript>().HowFullPercent = 0;
+        Cylinder.GetComponent<Renderer>().material.SetFloat("_FillAmount", 0);
         liquidAmount = 0;
         LiquidisReady = false;
     }
