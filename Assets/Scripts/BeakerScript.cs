@@ -19,7 +19,7 @@ public class BeakerScript : MonoBehaviour
 		{new Vector3(-4f, 8.5f, 7.5f), false},
 		
 		//lower shelf snapping positions
-		{new Vector3(-7.25f, 1.7f, 6.5f), false},
+		{new Vector3(-7f, 1.7f, 7f), false},
 	};
 	
 	//on start, teleport the beaker into the nearest available snapping position
@@ -87,7 +87,7 @@ public class BeakerScript : MonoBehaviour
 		snapPositions[lastSnapPosition] = false;
 		transform.position = nearestOpenSnapPosition() + snapOffset;
 		snapPositions[transform.position - snapOffset] = true;
-        if (transform.position - snapOffset == new Vector3(-7.25f, 1.7f, 6.5f))
+        if (transform.position - snapOffset == new Vector3(-7f, 1.7f, 7f))
         {
             ReactionManagerScript.LiquidObject = transform;
         }
@@ -99,7 +99,8 @@ public class BeakerScript : MonoBehaviour
 
     private void Update()
     {
-        if (CaculatePourAngles() <= pourThreshold)
+        //print(CaculatePourAngles());
+        if (CaculatePourAngles() >= pourThreshold)
         {
             Particle.SetActive(true);
         }

@@ -95,6 +95,7 @@ MonoBehaviour:
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
+  bubbleSpeed: 2
 --- !u!1 &3265743949670651874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,7 +4965,7 @@ MonoBehaviour:
   CanMove: 1
   Particle: {fileID: 3265743949670651874}
   pourThreshold: -20
-  snapOffset: {x: -0.569347, y: 0.887881, z: 0.5699}
+  snapOffset: {x: 0, y: 0.8, z: 0}
 --- !u!64 &3642835469029516012
 MeshCollider:
   m_ObjectHideFlags: 0
