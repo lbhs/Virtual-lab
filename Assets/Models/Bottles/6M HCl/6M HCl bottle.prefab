@@ -4964,7 +4964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanMove: 1
   Particle: {fileID: 3265743949670651874}
-  pourThreshold: -20
+  pourThreshold: 25
   snapOffset: {x: 0, y: 0.8, z: 0}
 --- !u!64 &3642835469029516012
 MeshCollider:
