@@ -8922,6 +8922,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
+    - target: {fileID: 8677464045047497719, guid: a140c1770d96805448cb8401533520a9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc694ba928afde9479801c90fb17463b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a140c1770d96805448cb8401533520a9, type: 3}
 --- !u!1 &1601710184
