@@ -10121,6 +10121,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
+    - target: {fileID: 3642835469029516003, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
+        type: 3}
+      propertyPath: snapOffset.y
+      value: 0.887881
+      objectReference: {fileID: 0}
     - target: {fileID: 3642835469029516014, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
         type: 3}
       propertyPath: m_Name
