@@ -25,8 +25,11 @@ public class BeakerScript : MonoBehaviour
 	//on start, teleport the beaker into the nearest available snapping position
 	void Start()
 	{
-		snapIntoPosition();
-	}
+        gameSceneController = FindObjectOfType<GameSceneController>();
+        // Starts on top shelf
+        gameSceneController.RegisterBeaker(gameObject, false);
+        snapIntoPosition();
+    }
 	
 	//when user clicks on trhe beaker start the ability to drag by measuring offset and teleport towards camera off the shelf
 	void OnMouseDown()
