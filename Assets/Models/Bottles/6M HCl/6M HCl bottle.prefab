@@ -4996,7 +4996,7 @@ MonoBehaviour:
   CanMove: 1
   Particle: {fileID: 3265743949670651874}
   pourThreshold: 25
-  snapOffset: {x: 0, y: 0.8, z: 0}
+  snapOffset: {x: 0, y: 0.887881, z: 0}
 --- !u!64 &3642835469029516012
 MeshCollider:
   m_ObjectHideFlags: 0
