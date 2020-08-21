@@ -4893,7 +4893,7 @@ GameObject:
   - component: {fileID: 2994066914291811131}
   - component: {fileID: 3642835469029516013}
   - component: {fileID: 3642835469029516003}
-  - component: {fileID: 3642835469029516012}
+  - component: {fileID: 3763102690015489427}
   m_Layer: 0
   m_Name: 6M HCl bottle
   m_TagString: Untagged
@@ -4996,9 +4996,9 @@ MonoBehaviour:
   CanMove: 1
   Particle: {fileID: 3265743949670651874}
   pourThreshold: 25
-  snapOffset: {x: 0, y: 0.8, z: 0}
---- !u!64 &3642835469029516012
-MeshCollider:
+  snapOffset: {x: 0, y: 0.887881, z: 0}
+--- !u!136 &3763102690015489427
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5007,7 +5007,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2226971439059595318, guid: 3f63e5eda6c3adb47a2ec0c1a595ead8, type: 3}
+  m_Radius: 34.414124
+  m_Height: 127.95007
+  m_Direction: 2
+  m_Center: {x: -0.0068863244, y: -0.03196001, z: 4.6466985}

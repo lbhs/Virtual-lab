@@ -61,8 +61,8 @@ public class GraduatedCylinderScript : MonoBehaviour
                 BackButton.SetActive(true);
                 isPouring = false;
                 ReactionManagerScript.LiquidisReady = true;
-                ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(0, 0, 0);
-                ReactionManagerScript.LiquidObject.position = new Vector3(-7.25f, 1.7f, 6.5f);
+                ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(-90, 90,0);
+                ReactionManagerScript.LiquidObject.position = new Vector3(-7f, 2.5f, 7f);
             }
         }
     }
@@ -72,7 +72,8 @@ public class GraduatedCylinderScript : MonoBehaviour
         //fill up liquid and set color
         LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") - fillRate);
         //HowFullPercent = HowFullPercent + fillRate;
-        LiquidRenderer.material.color = other.GetComponent<ParticleSystem>().main.startColor.color;
+        LiquidRenderer.material.SetColor("_Tint", other.GetComponent<ParticleSystem>().main.startColor.color);
+        LiquidRenderer.material.SetColor("_TopColor", other.GetComponent<ParticleSystem>().main.startColor.color);
     }
 
     public void fillToLevleFunction(float percentToFill)
