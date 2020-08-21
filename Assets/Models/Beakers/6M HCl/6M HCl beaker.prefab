@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1120801076212870670}
   - component: {fileID: 1480873747503419354}
   - component: {fileID: 1480873747503419348}
-  - component: {fileID: 4084319361674275645}
   m_Layer: 0
   m_Name: 6M HCl beaker
   m_TagString: Untagged
@@ -116,20 +115,6 @@ MonoBehaviour:
   Particle: {fileID: 7523003908894152304}
   pourThreshold: -20
   snapOffset: {x: -1.123864, y: -0.01, z: -0.009046}
---- !u!64 &4084319361674275645
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480873747503419355}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8581252681578477751, guid: d775240347d539b44a32f103043b5d92, type: 3}
 --- !u!1 &7523003908894152304
 GameObject:
   m_ObjectHideFlags: 0
