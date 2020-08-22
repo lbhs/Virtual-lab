@@ -12,6 +12,7 @@ public class GraduatedCylinderScript : MonoBehaviour
     private bool isPouring = false;
     private float pouringPercent;
     public GameObject BackButton;
+    public GameObject LiquidParticle;
     // Update is called once per frame
     void Update()
     {
@@ -21,8 +22,18 @@ public class GraduatedCylinderScript : MonoBehaviour
             LiquidRenderer.material.SetFloat("_FillAmount", -1.74f);
         else if (LiquidRenderer.material.GetFloat("_FillAmount") > 1.74f)
             LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
-
-        
+        //print(transform.eulerAngles.z);
+        if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 320)
+        {
+            var main = LiquidParticle.GetComponent<ParticleSystem>().main;
+            main.startColor = LiquidRenderer.material.GetColor("_Tint");
+            LiquidParticle.SetActive(true);
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") +0.001f);
+        }
+        else
+        {
+            LiquidParticle.SetActive(false);
+        }
         //Color newColor = LiquidRenderer.material.GetColor("_Tint");
         ////Transparency (scale.y = 0 causes weird bugs)
         //if (LiquidRenderer.material.GetFloat("_FillAmount") == 0)
@@ -38,9 +49,9 @@ public class GraduatedCylinderScript : MonoBehaviour
         //    LiquidRenderer.material.color = newColor;
         //}
 
-        //set the scale
+            //set the scale
 
-        if (isPouring)
+            if (isPouring)
         {
                 //print(ReactionManagerScript.LiquidObject.eulerAngles.x);
             if (ReactionManagerScript.LiquidObject.eulerAngles.x < 330)
@@ -61,7 +72,7 @@ public class GraduatedCylinderScript : MonoBehaviour
                 BackButton.SetActive(true);
                 isPouring = false;
                 ReactionManagerScript.LiquidisReady = true;
-                ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(-90, 90,0);
+                ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(270, 180,0);
                 ReactionManagerScript.LiquidObject.position = new Vector3(-7f, 2.5f, 7f);
             }
         }
