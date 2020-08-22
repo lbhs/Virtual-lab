@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: YellowLiquid
+  m_Name: 2MHcl
   m_Shader: {fileID: 4800000, guid: fdd5e83972d27a444a8c3cfef5702155, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -32,5 +32,5 @@ Material:
     m_Colors:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Tint: {r: 0.7924528, g: 0.5267888, b: 0.0710217, a: 1}
-    - _TopColor: {r: 0.8584906, g: 0.6175463, b: 0.20652366, a: 1}
+    - _Tint: {r: 0.71151996, g: 0.9150943, b: 0.66042185, a: 1}
+    - _TopColor: {r: 0.6901961, g: 0.8352942, b: 0.627451, a: 1}

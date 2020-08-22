@@ -80,7 +80,7 @@ public class ReactionAnim : MonoBehaviour
     {
         if (ReactionManagerScript.liquidAmount == 25f && ReactionManagerScript.MassAmount == 2)
         {
-            if (ReactionManagerScript.LiquidObject.name == "Red" && ReactionManagerScript.MetalObject.name == "Mg")
+            if (ReactionManagerScript.LiquidObject.name == "6M" && ReactionManagerScript.MetalObject.name == "Mg")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
             }

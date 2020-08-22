@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedLiquid
+  m_Name: 6MHcl
   m_Shader: {fileID: 4800000, guid: fdd5e83972d27a444a8c3cfef5702155, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -32,5 +32,5 @@ Material:
     m_Colors:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Tint: {r: 0.9528302, g: 0.3460751, b: 0.3460751, a: 1}
-    - _TopColor: {r: 0.990566, g: 0.4625756, b: 0.4625756, a: 1}
+    - _Tint: {r: 0.592296, g: 0.84313726, b: 0.47384316, a: 1}
+    - _TopColor: {r: 0.4784314, g: 0.627451, b: 0.38823533, a: 1}
