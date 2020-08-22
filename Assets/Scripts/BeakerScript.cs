@@ -25,10 +25,12 @@ public class BeakerScript : MonoBehaviour
 	//on start, teleport the beaker into the nearest available snapping position
 	void Start()
 	{
-        foreach (KeyValuePair<Vector3, bool> position in snapPositions) //reset static varibles for when reloading scene
+        var d = new Dictionary<Vector3, bool>();
+        foreach (var item in snapPositions)
         {
-            snapPositions[position.Key] = false;
+            d.Add(item.Key, false);
         }
+        snapPositions = d;
         snapIntoPosition();
 	}
 	
