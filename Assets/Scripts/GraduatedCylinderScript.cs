@@ -90,19 +90,15 @@ public class GraduatedCylinderScript : MonoBehaviour
     public void fillToLevleFunction(float percentToFill)
     {
         LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
-        //if (percentToFill > 1)
-        //{
-        //    pouringPercent = 1;
-        //}
-        //else if (percentToFill < 0)
-        //{
-        //    pouringPercent = 0;
-        //}
-        //else
-        //{
             pouringPercent = percentToFill;
-       // }
-        ReactionManagerScript.liquidAmount = pouringPercent;
+        if (percentToFill == -0.87f)
+        {
+            ReactionManagerScript.liquidAmount = 50;
+        }
+        else
+        {
+            ReactionManagerScript.liquidAmount = 25;
+        }
         ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(-90, 270, -90);
         ReactionManagerScript.LiquidisReady = false;
 

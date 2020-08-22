@@ -78,9 +78,9 @@ public class ReactionAnim : MonoBehaviour
 
     void StartVideo()
     {
-        if (ReactionManagerScript.liquidAmount == 0.5f && ReactionManagerScript.MassAmount == 2)
+        if (ReactionManagerScript.liquidAmount == 25f && ReactionManagerScript.MassAmount == 2)
         {
-            if (ReactionManagerScript.LiquidObject.name == "Bottle1" && ReactionManagerScript.MetalObject.name == "metal1")
+            if (ReactionManagerScript.LiquidObject.name == "Red" && ReactionManagerScript.MetalObject.name == "Mg")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
             }
