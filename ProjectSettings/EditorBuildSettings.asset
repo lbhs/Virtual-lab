@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Liquid_Pour_Test.unity
+    guid: b55f9a4b943fbed48ad54c243fdada20
   m_configObjects: {}

@@ -23,6 +23,10 @@ public class MetalScript : MonoBehaviour
     //on start, teleport the beaker into the nearest available snapping position
     void Start()
     {
+        foreach (KeyValuePair<Vector3, bool> position in snapPositions) //reset static varibles for when reloading scene
+        {
+            snapPositions[position.Key] = false;
+        }
         snapIntoPosition();
     }
 

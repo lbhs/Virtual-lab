@@ -25,7 +25,11 @@ public class BeakerScript : MonoBehaviour
 	//on start, teleport the beaker into the nearest available snapping position
 	void Start()
 	{
-		snapIntoPosition();
+        foreach (KeyValuePair<Vector3, bool> position in snapPositions) //reset static varibles for when reloading scene
+        {
+            snapPositions[position.Key] = false;
+        }
+        snapIntoPosition();
 	}
 	
 	//when user clicks on trhe beaker start the ability to drag by measuring offset and teleport towards camera off the shelf

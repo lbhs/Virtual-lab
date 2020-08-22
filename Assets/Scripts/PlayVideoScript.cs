@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+
 public class PlayVideoScript : MonoBehaviour
 {
     public GameObject videoScreen;
-    public GameObject eventSystem;
     public VideoPlayer VP;
    public void PlayAVideo(string clip)
     {
@@ -16,6 +17,16 @@ public class PlayVideoScript : MonoBehaviour
 #endif
         VP.Play();
         videoScreen.SetActive(true);
-        eventSystem.SetActive(false);
+    }
+
+    public void ReloadScene()
+    {
+        ReactionManagerScript.LiquidisReady = false;
+        ReactionManagerScript.MassisReady = false;
+        ReactionManagerScript.LiquidObject = null;
+        ReactionManagerScript.MetalObject = null;
+        ReactionManagerScript.liquidAmount = 0;
+        ReactionManagerScript.MassAmount = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
