@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class ScaleScript : MonoBehaviour
 {
     public Text DisplayText;
-    [Header("Needs to be only 4, first two will always be picked")]
-    public GameObject[] massObjects = new GameObject[4];
-
+    public GameObject[] massObjects = new GameObject[2];
+    public Renderer[] metalObjects;
     //[HideInInspector]
    // public List<GameObject> listOfObjectsOnHere = new List<GameObject>();
     //private void ontriggerenter(collider other)
@@ -35,10 +34,9 @@ public class ScaleScript : MonoBehaviour
     public void setTwoGrams()
     {
         massObjects[0].SetActive(true);
-        massObjects[1].SetActive(true);
-        massObjects[2].SetActive(false);
-        massObjects[3].SetActive(false);
+        massObjects[1].SetActive(false);
         DisplayText.text = "2.00 g";
+        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial);
         ReactionManagerScript.MassisReady = true;
         ReactionManagerScript.MassAmount = 2;
     }
@@ -46,9 +44,8 @@ public class ScaleScript : MonoBehaviour
     {
         massObjects[0].SetActive(true);
         massObjects[1].SetActive(true);
-        massObjects[2].SetActive(true);
-        massObjects[3].SetActive(true);
         DisplayText.text = "4.00 g";
+        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial);
         ReactionManagerScript.MassisReady = true;
         ReactionManagerScript.MassAmount = 4;
     }
@@ -57,10 +54,16 @@ public class ScaleScript : MonoBehaviour
     {
         massObjects[0].SetActive(false);
         massObjects[1].SetActive(false);
-        massObjects[2].SetActive(false);
-        massObjects[3].SetActive(false);
         DisplayText.text = "000 g";
         ReactionManagerScript.MassisReady = false;
         ReactionManagerScript.MassAmount = 0;
+    }
+
+    void setRendrer(Material mat)
+    {
+        foreach (var item in metalObjects)
+        {
+            item.material = mat;
+        }
     }
 }

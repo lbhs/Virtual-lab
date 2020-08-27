@@ -8,21 +8,28 @@ public class MetalScript : MonoBehaviour
     private Vector3 offset;
     private Vector3 lastSnapPosition;
     public bool CanMove = true;
-
+    public Material MetalMaterial;
     //dictionary keeps track of available snapping positions with boolean to describe occupancy
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
         {new Vector3(0f, 9.5f, 8f), false},
         {new Vector3(2f, 9.5f, 8f), false},
+        {new Vector3(3.7f, 9.5f, 8f), false},
 		
 		//lower shelf snapping positions
-        {new Vector3(0f,2.7f, 7f), false},
+        {new Vector3(6f,2.7f, 7f), false},
     };
 
     //on start, teleport the beaker into the nearest available snapping position
     void Start()
     {
+        var d = new Dictionary<Vector3, bool>();
+        foreach (var item in snapPositions)
+        {
+            d.Add(item.Key, false);
+        }
+        snapPositions = d;
         snapIntoPosition();
     }
 
@@ -85,7 +92,7 @@ public class MetalScript : MonoBehaviour
         snapPositions[lastSnapPosition] = false;
         transform.position = nearestOpenSnapPosition();
         snapPositions[transform.position] = true;
-        if (transform.position == new Vector3(0f, 2.7f, 7f))
+        if (transform.position == new Vector3(6f, 2.7f, 7f))
         {
             ReactionManagerScript.MetalObject = transform;
         }

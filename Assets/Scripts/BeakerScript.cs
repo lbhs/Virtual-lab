@@ -25,7 +25,13 @@ public class BeakerScript : MonoBehaviour
 	//on start, teleport the beaker into the nearest available snapping position
 	void Start()
 	{
-		snapIntoPosition();
+        var d = new Dictionary<Vector3, bool>();
+        foreach (var item in snapPositions)
+        {
+            d.Add(item.Key, false);
+        }
+        snapPositions = d;
+        snapIntoPosition();
 	}
 	
 	//when user clicks on trhe beaker start the ability to drag by measuring offset and teleport towards camera off the shelf
@@ -87,6 +93,8 @@ public class BeakerScript : MonoBehaviour
 		snapPositions[lastSnapPosition] = false;
 		transform.position = nearestOpenSnapPosition() + snapOffset;
 		snapPositions[transform.position - snapOffset] = true;
+
+        //print(gameObject.name + ":  " + (transform.position - snapOffset));
         if (transform.position - snapOffset == new Vector3(-7f, 1.7f, 7f))
         {
             ReactionManagerScript.LiquidObject = transform;

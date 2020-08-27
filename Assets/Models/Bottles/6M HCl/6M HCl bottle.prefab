@@ -57,8 +57,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2869742049568003743}
   m_LocalRotation: {x: 0.000000016763806, y: 0.000000037252903, z: 0.3669041, w: 0.9302588}
-  m_LocalPosition: {x: -0.023453554, y: -0.0043134377, z: 0.00011897817}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.023453554, y: -0.0043134377, z: 0.06}
+  m_LocalScale: {x: 0.99, y: 0.99, z: 1}
   m_Children: []
   m_Father: {fileID: 4163053536097269844}
   m_RootOrder: 2
@@ -348,7 +348,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0, a: 1}
+      maxColor: {r: 0.7607844, g: 0.8745099, b: 0.6784314, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4893,7 +4893,7 @@ GameObject:
   - component: {fileID: 2994066914291811131}
   - component: {fileID: 3642835469029516013}
   - component: {fileID: 3642835469029516003}
-  - component: {fileID: 3642835469029516012}
+  - component: {fileID: 3763102690015489427}
   m_Layer: 0
   m_Name: 6M HCl bottle
   m_TagString: Untagged
@@ -4996,9 +4996,9 @@ MonoBehaviour:
   CanMove: 1
   Particle: {fileID: 3265743949670651874}
   pourThreshold: 25
-  snapOffset: {x: 0, y: 0.8, z: 0}
---- !u!64 &3642835469029516012
-MeshCollider:
+  snapOffset: {x: 0, y: 0.887881, z: 0}
+--- !u!136 &3763102690015489427
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5007,7 +5007,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2226971439059595318, guid: 3f63e5eda6c3adb47a2ec0c1a595ead8, type: 3}
+  m_Radius: 34.414124
+  m_Height: 127.95007
+  m_Direction: 2
+  m_Center: {x: -0.0068863244, y: -0.03196001, z: 4.6466985}

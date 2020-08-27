@@ -21,6 +21,7 @@ public class ReactionManagerScript : MonoBehaviour
     public GameObject StartReactionButton;
     public ScaleScript scale;
     public GameObject Cylinder;
+    public GameObject beaker;
     //public float rotateSpeed=90;
 
     // Start is called before the first frame update
@@ -29,13 +30,14 @@ public class ReactionManagerScript : MonoBehaviour
         reactionState = ReactionState.inital;
         Cylinder.SetActive(false);
         scale.gameObject.SetActive(false);
+        beaker.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-       // print(LiquidObject);
-       // print(MetalObject);
+        //print(LiquidObject);
+        //print(MetalObject);
         if (reactionState == ReactionState.inital && LiquidObject != null && MetalObject != null)
         {
             ContinueCanvasOne.SetActive(true);
@@ -79,6 +81,10 @@ public class ReactionManagerScript : MonoBehaviour
             {
                 StartReactionButton.SetActive(false);
             }
+        }
+        else if(reactionState == ReactionState.reactionStarting)
+        {
+            beaker.SetActive(true);
         }
     }
 
@@ -130,7 +136,7 @@ public class ReactionManagerScript : MonoBehaviour
     {
         reactionState = ReactionState.reactionStarting;
         MassCanvas.SetActive(false);
-        Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(transform); //change this to the beaker's transform
+        Camera.main.GetComponent<CameraZoomer>().MoveAndZoomToGameObject(beaker.transform); //change this to the beaker's transform
         GetComponent<ReactionAnim>().startAnimation();
     }
     
