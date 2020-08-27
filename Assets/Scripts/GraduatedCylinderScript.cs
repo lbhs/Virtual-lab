@@ -13,6 +13,7 @@ public class GraduatedCylinderScript : MonoBehaviour
     private float pouringPercent;
     public GameObject BackButton;
     public GameObject LiquidParticle;
+    private Vector3 ogPos;
     // Update is called once per frame
     void Update()
     {
@@ -73,7 +74,7 @@ public class GraduatedCylinderScript : MonoBehaviour
                 isPouring = false;
                 ReactionManagerScript.LiquidisReady = true;
                 ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(270, 180,0);
-                ReactionManagerScript.LiquidObject.position = new Vector3(-7f, 2.5f, 7f);
+                ReactionManagerScript.LiquidObject.position = ogPos;
             }
         }
     }
@@ -89,6 +90,7 @@ public class GraduatedCylinderScript : MonoBehaviour
 
     public void fillToLevleFunction(float percentToFill)
     {
+        ogPos = ReactionManagerScript.LiquidObject.position;
         LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
             pouringPercent = percentToFill;
         if (percentToFill == -0.87f)
