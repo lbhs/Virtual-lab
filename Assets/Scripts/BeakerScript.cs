@@ -94,7 +94,7 @@ public class BeakerScript : MonoBehaviour
 		transform.position = nearestOpenSnapPosition() + snapOffset;
 		snapPositions[transform.position - snapOffset] = true;
 
-        print(gameObject.name + ":  " + (transform.position - snapOffset));
+        //print(gameObject.name + ":  " + (transform.position - snapOffset));
         if (transform.position - snapOffset == new Vector3(-7f, 1.7f, 7f))
         {
             ReactionManagerScript.LiquidObject = transform;
