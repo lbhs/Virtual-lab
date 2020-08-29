@@ -7178,6 +7178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanMove: 1
   MetalMaterial: {fileID: 2100000, guid: cdba04de1077d7943830415112160cda, type: 2}
+  MetalMesh: {fileID: -8743275478001297213, guid: ae59bf98ba8accb4ab76bf25c4e50ee7,
+    type: 3}
 --- !u!54 &576971172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13304,6 +13306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanMove: 1
   MetalMaterial: {fileID: 2100000, guid: 2d1c89753078b7d4d8d90d5b05eccc6d, type: 2}
+  MetalMesh: {fileID: -8743275478001297213, guid: ae59bf98ba8accb4ab76bf25c4e50ee7,
+    type: 3}
 --- !u!1 &1438509418
 GameObject:
   m_ObjectHideFlags: 0
@@ -21878,6 +21882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanMove: 1
   MetalMaterial: {fileID: 2100000, guid: 2d1c89753078b7d4d8d90d5b05eccc6d, type: 2}
+  MetalMesh: {fileID: 8604045607132181640, guid: 7e1a0c54cb05e8145add92c86f3747ae,
+    type: 3}
 --- !u!54 &1963789159
 Rigidbody:
   m_ObjectHideFlags: 0
