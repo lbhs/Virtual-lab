@@ -11,6 +11,7 @@ public class ReactionAnim : MonoBehaviour
     public List<Transform> Metals = new List<Transform>();
     public Transform TargetPos;
     public Transform GCylinder;
+    public ScaleScript Scale;
     private float time;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class ReactionAnim : MonoBehaviour
         if(isPlaying == true)
         {
             //print("animating...");
+            Scale.DisplayText.text = "000 g";
             foreach (var item in Metals)
             {
                 if (item.gameObject.activeSelf == true)
@@ -78,9 +80,14 @@ public class ReactionAnim : MonoBehaviour
 
     void StartVideo()
     {
-        if (ReactionManagerScript.liquidAmount == 25f && ReactionManagerScript.MassAmount == 2)
+        string LiquidName = ReactionManagerScript.LiquidObject.name;
+        string MetalName = ReactionManagerScript.MetalObject.name;
+        float LiquidAmount = ReactionManagerScript.liquidAmount;
+        float MassAmount = ReactionManagerScript.MassAmount;
+
+        if (LiquidAmount == 50f && MassAmount == 1)
         {
-            if (ReactionManagerScript.LiquidObject.name == "6M" && ReactionManagerScript.MetalObject.name == "Mg")
+            if (LiquidName == "3M" && MetalName == "Mg")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
             }

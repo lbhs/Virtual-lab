@@ -14,15 +14,17 @@ public class GraduatedCylinderScript : MonoBehaviour
     public GameObject BackButton;
     public GameObject LiquidParticle;
     private Vector3 ogPos;
+    public float LiquidMax;
+    public float LiquidMin;
     // Update is called once per frame
     void Update()
     {
         //cap percent between 0 and 1
-        if (LiquidRenderer.material.GetFloat("_FillAmount") < -1.74f)
+        if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMax)
 
-            LiquidRenderer.material.SetFloat("_FillAmount", -1.74f);
-        else if (LiquidRenderer.material.GetFloat("_FillAmount") > 1.74f)
-            LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMax);
+        else if (LiquidRenderer.material.GetFloat("_FillAmount") > LiquidMin)
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
         //print(transform.eulerAngles.z);
         if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 320)
         {
@@ -91,9 +93,9 @@ public class GraduatedCylinderScript : MonoBehaviour
     public void fillToLevleFunction(float percentToFill)
     {
         ogPos = ReactionManagerScript.LiquidObject.position;
-        LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
+        LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
             pouringPercent = percentToFill;
-        if (percentToFill == -0.87f)
+        if (percentToFill == LiquidMax)
         {
             ReactionManagerScript.liquidAmount = 50;
         }
