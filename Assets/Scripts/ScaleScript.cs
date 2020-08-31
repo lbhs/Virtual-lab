@@ -9,7 +9,7 @@ public class ScaleScript : MonoBehaviour
     public GameObject[] massObjects = new GameObject[2];
     public Renderer[] metalObjects;
     //[HideInInspector]
-   // public List<GameObject> listOfObjectsOnHere = new List<GameObject>();
+    // public List<GameObject> listOfObjectsOnHere = new List<GameObject>();
     //private void ontriggerenter(collider other)
     //{
     //    if(other.transform.parent.getcomponent<rigidbody>() != null)
@@ -30,7 +30,15 @@ public class ScaleScript : MonoBehaviour
     //        displaytext.text = val.tostring();
     //    }
     //}
-
+    public void setOneGrams()
+    {
+        massObjects[0].SetActive(true);
+        massObjects[1].SetActive(false);
+        DisplayText.text = "1.00 g";
+        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial, ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMesh);
+        ReactionManagerScript.MassisReady = true;
+        ReactionManagerScript.MassAmount = 1;
+    }
     public void setTwoGrams()
     {
         massObjects[0].SetActive(true);
