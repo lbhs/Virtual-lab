@@ -7398,7 +7398,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.99
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -24407,6 +24407,7 @@ GameObject:
   - component: {fileID: 4078599798504690847}
   - component: {fileID: 4170922027073502306}
   - component: {fileID: 7421177914453910721}
+  - component: {fileID: 7421177914453910722}
   m_Layer: 0
   m_Name: top
   m_TagString: Untagged
@@ -24423,11 +24424,24 @@ MeshCollider:
   m_GameObject: {fileID: 7421177914453910720}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 282665186597767424, guid: b10a142f2693c5f47ab294d82c4c92e8, type: 3}
+--- !u!65 &7421177914453910722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421177914453910720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 0.020000001, z: 2.9344628}
+  m_Center: {x: -0.000000003973641, y: -0.000000004342885, z: -1.4572313}
 --- !u!1001 &8554455901509718324
 PrefabInstance:
   m_ObjectHideFlags: 0

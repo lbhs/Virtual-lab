@@ -80,25 +80,31 @@ public class ReactionAnim : MonoBehaviour
 
     void StartVideo()
     {
-        string LiquidName = ReactionManagerScript.LiquidObject.name;
-        string MetalName = ReactionManagerScript.MetalObject.name;
-        float LiquidAmount = ReactionManagerScript.liquidAmount;
-        float MassAmount = ReactionManagerScript.MassAmount;
+        string LiquidName = ReactionManagerScript.LiquidObject.name; //Name of GameObject
+        string MetalName = ReactionManagerScript.MetalObject.name; //Name of GameObject
+        float LiquidAmount = ReactionManagerScript.liquidAmount; //from a scale of 0 to 1
+        float MassAmount = ReactionManagerScript.MassAmount; //Set in the ScaleScript functions
 
-        if (LiquidAmount == 50f && MassAmount == 1)
+        if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "3M")
         {
-            if (LiquidName == "3M" && MetalName == "Mg")
-            {
-                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
-            }
-            else
+            if (MetalName == "Zn")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
             }
+            else if(MetalName == "Mg")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
+            }
+            else if(MetalName == "Cu")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[2]);
+            }
         }
-        else
+        else //Backup
         {
-            GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
+            print("Liquid name: " + LiquidName + " Liquid Amount: " + LiquidAmount + " Metal Name: " + MetalName + " Metal Amount: " + MassAmount);
+            throw new System.ArgumentException("Error, could not meet conditions in ReactionAnim Script");
+            //GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
         }
     }
 }

@@ -101,17 +101,13 @@ public class GraduatedCylinderScript : MonoBehaviour
             percentToFill = 0;
         }
         pouringPercent = ((LiquidMax-LiquidMin) * percentToFill) + LiquidMin;
+        ReactionManagerScript.liquidAmount = percentToFill;
 
         ogPos = ReactionManagerScript.LiquidObject.position;
         LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
-        if (percentToFill == LiquidMax)
-        {
-            ReactionManagerScript.liquidAmount = 50;
-        }
-        else
-        {
-            ReactionManagerScript.liquidAmount = 25;
-        }
+
+
+
         ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(-90, 270, -90);
         ReactionManagerScript.LiquidisReady = false;
 
