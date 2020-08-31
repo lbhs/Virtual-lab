@@ -7,6 +7,7 @@ public class GraduatedCylinderScript : MonoBehaviour
     //[Range(0, 0.99f)]
     //public float HowFullPercent;
     public float fillRate = 0.01f;
+    public float drainRate = 0.001f;
     //public Transform LiquidScaler;
     public Renderer LiquidRenderer;
     private bool isPouring = false;
@@ -31,7 +32,7 @@ public class GraduatedCylinderScript : MonoBehaviour
             var main = LiquidParticle.GetComponent<ParticleSystem>().main;
             main.startColor = LiquidRenderer.material.GetColor("_Tint");
             LiquidParticle.SetActive(true);
-            LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") +0.001f);
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") + drainRate *Time.deltaTime);
         }
         else
         {
@@ -92,9 +93,17 @@ public class GraduatedCylinderScript : MonoBehaviour
 
     public void fillToLevleFunction(float percentToFill)
     {
+        if(percentToFill > 1)
+        {
+            percentToFill = 1;
+        }else if(percentToFill < 0)
+        {
+            percentToFill = 0;
+        }
+        pouringPercent = ((LiquidMax-LiquidMin) * percentToFill) + LiquidMin;
+
         ogPos = ReactionManagerScript.LiquidObject.position;
         LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
-            pouringPercent = percentToFill;
         if (percentToFill == LiquidMax)
         {
             ReactionManagerScript.liquidAmount = 50;
