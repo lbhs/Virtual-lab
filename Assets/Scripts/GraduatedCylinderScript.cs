@@ -29,10 +29,17 @@ public class GraduatedCylinderScript : MonoBehaviour
         //print(transform.eulerAngles.z);
         if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 320)
         {
-            var main = LiquidParticle.GetComponent<ParticleSystem>().main;
-            main.startColor = LiquidRenderer.material.GetColor("_Tint");
-            LiquidParticle.SetActive(true);
-            LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") + drainRate *Time.deltaTime);
+            if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMin - 0.4f)
+            {
+                var main = LiquidParticle.GetComponent<ParticleSystem>().main;
+                main.startColor = LiquidRenderer.material.GetColor("_Tint");
+                LiquidParticle.SetActive(true);
+                LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") + drainRate * Time.deltaTime);
+            }
+            else
+            {
+                LiquidParticle.SetActive(false);
+            }
         }
         else
         {
