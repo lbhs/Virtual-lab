@@ -7526,8 +7526,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoNames:
-  - test_video_1.mp4
-  - test_video_2.mp4
+  - Zinc_Trim.mp4
+  - Magnesium_Trim.mp4
+  - Copper_Trim.mp4
   RMS: {fileID: 592783534}
   Metals:
   - {fileID: 1291501446}
