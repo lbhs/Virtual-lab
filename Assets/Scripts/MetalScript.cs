@@ -77,11 +77,14 @@ public class MetalScript : MonoBehaviour
         Vector3 nearestPosition = Vector3.zero;
         foreach (KeyValuePair<Vector3, bool> position in snapPositions)
         {
-            float curDistance = Vector3.Distance(gameObject.transform.position, position.Key);
-            if (!position.Value && curDistance < minDistance)
+            if (position.Key != Vector3.zero)
             {
-                minDistance = curDistance;
-                nearestPosition = position.Key;
+                float curDistance = Vector3.Distance(gameObject.transform.position, position.Key);
+                if (!position.Value && curDistance < minDistance)
+                {
+                    minDistance = curDistance;
+                    nearestPosition = position.Key;
+                }
             }
         }
         return nearestPosition;
