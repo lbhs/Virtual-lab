@@ -22,7 +22,7 @@ public class ReactionAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPlaying == true)
+        if (isPlaying == true)
         {
             //print("animating...");
             Scale.DisplayText.text = "000 g";
@@ -46,29 +46,31 @@ public class ReactionAnim : MonoBehaviour
                     }
                     else
                     {
-                        if(Vector3.Distance(item.position,TargetPos.position) > 1)
+                        if (Vector3.Distance(item.position, TargetPos.position) > 1)
                         {
                             item.position = TargetPos.position;
                             item.GetComponent<Rigidbody>().useGravity = true;
                             item.GetComponent<MeshCollider>().enabled = true;
                         }
                     }
-                   
+
                 }
             }
-
-            GCylinder.position = Vector3.MoveTowards(GCylinder.position, new Vector3(-4.5f, 4f, 7), 2 * Time.deltaTime);
-            //print(GCylinder.eulerAngles.z);
-            if (GCylinder.eulerAngles.z > 310 || GCylinder.eulerAngles.z ==0)
+            if (Time.time - time > 2.7f)
             {
-                GCylinder.Rotate(0,0, -90 * Time.deltaTime);
+                GCylinder.position = Vector3.MoveTowards(GCylinder.position, new Vector3(-4.5f, 4f, 7), 2 * Time.deltaTime);
+                //print(GCylinder.eulerAngles.z);
+                if (GCylinder.eulerAngles.z > 310 || GCylinder.eulerAngles.z == 0)
+                {
+                    GCylinder.Rotate(0, 0, -90 * Time.deltaTime);
+                }
             }
-
-            if (Time.time - time > 4) //if Animation is done
-            { 
+            if (Time.time - time > 8) //if Animation is done
+            {
                 isPlaying = false;
                 StartVideo();
             }
+
         }
     }
 
