@@ -20,7 +20,8 @@ public class BeakerScript : MonoBehaviour
 		
 		//lower shelf snapping positions
 		{new Vector3(-7f, 1.7f, 7f), false},
-	};
+        
+    };
 	
 	//on start, teleport the beaker into the nearest available snapping position
 	void Start()
@@ -76,13 +77,16 @@ public class BeakerScript : MonoBehaviour
 		float minDistance = 100000f;
 		Vector3 nearestPosition = Vector3.zero;
 		foreach(KeyValuePair<Vector3, bool> position in snapPositions)
-		{
-			float curDistance = Vector3.Distance(gameObject.transform.position, position.Key);
-			if(!position.Value && curDistance < minDistance)
-			{
-				minDistance = curDistance;
-				nearestPosition = position.Key;
-			}
+        {
+            if (position.Key != Vector3.zero)
+            {
+                float curDistance = Vector3.Distance(gameObject.transform.position, position.Key);
+                if (!position.Value && curDistance < minDistance)
+                {
+                    minDistance = curDistance;
+                    nearestPosition = position.Key;
+                }
+            }
 		}
 		return nearestPosition;
 	}
