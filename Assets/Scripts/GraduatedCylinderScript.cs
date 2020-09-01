@@ -7,6 +7,7 @@ public class GraduatedCylinderScript : MonoBehaviour
     //[Range(0, 0.99f)]
     //public float HowFullPercent;
     public float fillRate = 0.01f;
+    public float drainRate = 0.001f;
     //public Transform LiquidScaler;
     public Renderer LiquidRenderer;
     private bool isPouring = false;
@@ -14,22 +15,31 @@ public class GraduatedCylinderScript : MonoBehaviour
     public GameObject BackButton;
     public GameObject LiquidParticle;
     private Vector3 ogPos;
+    public float LiquidMax;
+    public float LiquidMin;
     // Update is called once per frame
     void Update()
     {
         //cap percent between 0 and 1
-        if (LiquidRenderer.material.GetFloat("_FillAmount") < -1.74f)
+        if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMax)
 
-            LiquidRenderer.material.SetFloat("_FillAmount", -1.74f);
-        else if (LiquidRenderer.material.GetFloat("_FillAmount") > 1.74f)
-            LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMax);
+        else if (LiquidRenderer.material.GetFloat("_FillAmount") > LiquidMin)
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
         //print(transform.eulerAngles.z);
         if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 320)
         {
-            var main = LiquidParticle.GetComponent<ParticleSystem>().main;
-            main.startColor = LiquidRenderer.material.GetColor("_Tint");
-            LiquidParticle.SetActive(true);
-            LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") +0.001f);
+            if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMin - 0.4f)
+            {
+                var main = LiquidParticle.GetComponent<ParticleSystem>().main;
+                main.startColor = LiquidRenderer.material.GetColor("_Tint");
+                LiquidParticle.SetActive(true);
+                LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") + drainRate * Time.deltaTime);
+            }
+            else
+            {
+                LiquidParticle.SetActive(false);
+            }
         }
         else
         {
@@ -90,17 +100,21 @@ public class GraduatedCylinderScript : MonoBehaviour
 
     public void fillToLevleFunction(float percentToFill)
     {
+        if(percentToFill > 1)
+        {
+            percentToFill = 1;
+        }else if(percentToFill < 0)
+        {
+            percentToFill = 0;
+        }
+        pouringPercent = ((LiquidMax-LiquidMin) * percentToFill) + LiquidMin;
+        ReactionManagerScript.liquidAmount = percentToFill;
+
         ogPos = ReactionManagerScript.LiquidObject.position;
-        LiquidRenderer.material.SetFloat("_FillAmount", 1.74f);
-            pouringPercent = percentToFill;
-        if (percentToFill == -0.87f)
-        {
-            ReactionManagerScript.liquidAmount = 50;
-        }
-        else
-        {
-            ReactionManagerScript.liquidAmount = 25;
-        }
+        LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
+
+
+
         ReactionManagerScript.LiquidObject.eulerAngles = new Vector3(-90, 270, -90);
         ReactionManagerScript.LiquidisReady = false;
 

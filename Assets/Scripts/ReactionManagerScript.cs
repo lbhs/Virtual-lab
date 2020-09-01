@@ -119,7 +119,7 @@ public class ReactionManagerScript : MonoBehaviour
     public void ContinueButtonOne()
     {
         reactionState = ReactionState.choseLiquid;
-        Cylinder.GetComponent<Renderer>().material.SetFloat("_FillAmount", 0);
+        //Cylinder.GetComponent<GraduatedCylinderScript>().LiquidRenderer.material.SetFloat("_FillAmount", 0);
         liquidAmount = 0;
         LiquidisReady = false;
     }

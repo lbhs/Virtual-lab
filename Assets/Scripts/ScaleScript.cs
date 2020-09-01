@@ -9,7 +9,7 @@ public class ScaleScript : MonoBehaviour
     public GameObject[] massObjects = new GameObject[2];
     public Renderer[] metalObjects;
     //[HideInInspector]
-   // public List<GameObject> listOfObjectsOnHere = new List<GameObject>();
+    // public List<GameObject> listOfObjectsOnHere = new List<GameObject>();
     //private void ontriggerenter(collider other)
     //{
     //    if(other.transform.parent.getcomponent<rigidbody>() != null)
@@ -30,13 +30,21 @@ public class ScaleScript : MonoBehaviour
     //        displaytext.text = val.tostring();
     //    }
     //}
-
+    public void setOneGrams()
+    {
+        massObjects[0].SetActive(true);
+        massObjects[1].SetActive(false);
+        DisplayText.text = "1.00 g";
+        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial, ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMesh);
+        ReactionManagerScript.MassisReady = true;
+        ReactionManagerScript.MassAmount = 1;
+    }
     public void setTwoGrams()
     {
         massObjects[0].SetActive(true);
         massObjects[1].SetActive(false);
         DisplayText.text = "2.00 g";
-        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial);
+        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial,ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMesh);
         ReactionManagerScript.MassisReady = true;
         ReactionManagerScript.MassAmount = 2;
     }
@@ -45,7 +53,7 @@ public class ScaleScript : MonoBehaviour
         massObjects[0].SetActive(true);
         massObjects[1].SetActive(true);
         DisplayText.text = "4.00 g";
-        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial);
+        setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial, ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMesh);
         ReactionManagerScript.MassisReady = true;
         ReactionManagerScript.MassAmount = 4;
     }
@@ -59,11 +67,13 @@ public class ScaleScript : MonoBehaviour
         ReactionManagerScript.MassAmount = 0;
     }
 
-    void setRendrer(Material mat)
+    void setRendrer(Material mat, Mesh mesh)
     {
         foreach (var item in metalObjects)
         {
             item.material = mat;
+            item.GetComponent<MeshFilter>().mesh = mesh;
+            item.GetComponent<MeshCollider>().sharedMesh = mesh;
         }
     }
 }

@@ -9,6 +9,7 @@ public class MetalScript : MonoBehaviour
     private Vector3 lastSnapPosition;
     public bool CanMove = true;
     public Material MetalMaterial;
+    public Mesh MetalMesh;
     //dictionary keeps track of available snapping positions with boolean to describe occupancy
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		

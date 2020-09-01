@@ -10,3 +10,26 @@ C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use
 C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
 C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
 
+[0831/144429.895:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0831/144430.189:INFO:CONSOLE(1)] "%cUnhandled rejection Error: unknown exception type
+    at <anonymous>:1:1
+From previous event:
+    at j.F [as _captureStackTrace] (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/external.js:1:15958)
+    at j._resolveFromExecutor (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/external.js:1:45082)
+    at new j (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/external.js:1:38328)
+    at t.initializeDictionaries (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/spaces.js:1:1957)
+    at Object.<anonymous> (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/main.js:1:11271)
+    at o (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/spaces.js:1:410)
+    at window.webpackJsonp (file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/spaces.js:1:284)
+    at file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/main.js:1:1", source: file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%202020/Required/www-butler/build/external.js (1)
+[0831/151750.315:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0831/154826.087:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
