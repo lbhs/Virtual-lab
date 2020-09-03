@@ -73,7 +73,7 @@ public class ScaleScript : MonoBehaviour
         {
             item.material = mat;
             item.GetComponent<MeshFilter>().mesh = mesh;
-            item.GetComponent<MeshCollider>().sharedMesh = mesh;
+            //item.GetComponent<MeshCollider>().sharedMesh = mesh;
         }
     }
 }

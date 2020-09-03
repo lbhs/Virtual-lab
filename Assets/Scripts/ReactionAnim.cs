@@ -35,13 +35,13 @@ public class ReactionAnim : MonoBehaviour
                         if (item.localPosition.x > -5)
                         {
                             item.GetComponent<Rigidbody>().useGravity = false;
-                            item.GetComponent<MeshCollider>().enabled = false;
+                            item.GetComponent<BoxCollider>().enabled = false;
                             item.position = Vector3.MoveTowards(item.position, TargetPos.position, 3 * Time.deltaTime);
                         }
                         else
                         {
                             item.GetComponent<Rigidbody>().useGravity = true;
-                            item.GetComponent<MeshCollider>().enabled = true;
+                            item.GetComponent<BoxCollider>().enabled = true;
                         }
                     }
                     else
@@ -50,7 +50,7 @@ public class ReactionAnim : MonoBehaviour
                         {
                             item.position = TargetPos.position;
                             item.GetComponent<Rigidbody>().useGravity = true;
-                            item.GetComponent<MeshCollider>().enabled = true;
+                            item.GetComponent<BoxCollider>().enabled = true;
                         }
                     }
 
