@@ -9,7 +9,7 @@ public class SimpleBeakerScript : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         //fill up liquid and set color
-        LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") - fillRate);
+        LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") - (fillRate*Time.deltaTime));
         //HowFullPercent = HowFullPercent + fillRate;
         LiquidRenderer.material.SetColor("_Tint", other.GetComponent<ParticleSystem>().main.startColor.color);
         LiquidRenderer.material.SetColor("_TopColor", other.GetComponent<ParticleSystem>().main.startColor.color);
