@@ -17,16 +17,9 @@ public class GraduatedCylinderScript : MonoBehaviour
     private Vector3 ogPos;
     public float LiquidMax;
     public float LiquidMin;
-    // Update is called once per frame
-    void Update()
-    {
-        //cap percent between 0 and 1
-        if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMax)
 
-            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMax);
-        else if (LiquidRenderer.material.GetFloat("_FillAmount") > LiquidMin)
-            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
-        //print(transform.eulerAngles.z);
+    private void FixedUpdate()
+    {
         if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 320)
         {
             if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMin - 0.4f)
@@ -34,7 +27,7 @@ public class GraduatedCylinderScript : MonoBehaviour
                 var main = LiquidParticle.GetComponent<ParticleSystem>().main;
                 main.startColor = LiquidRenderer.material.GetColor("_Tint");
                 LiquidParticle.SetActive(true);
-                LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") + drainRate * Time.deltaTime);
+                LiquidRenderer.material.SetFloat("_FillAmount", LiquidRenderer.material.GetFloat("_FillAmount") + drainRate);
             }
             else
             {
@@ -45,6 +38,18 @@ public class GraduatedCylinderScript : MonoBehaviour
         {
             LiquidParticle.SetActive(false);
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //cap percent between 0 and 1
+        if (LiquidRenderer.material.GetFloat("_FillAmount") < LiquidMax)
+
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMax);
+        else if (LiquidRenderer.material.GetFloat("_FillAmount") > LiquidMin)
+            LiquidRenderer.material.SetFloat("_FillAmount", LiquidMin);
+        //print(transform.eulerAngles.z);
+        
         //Color newColor = LiquidRenderer.material.GetColor("_Tint");
         ////Transparency (scale.y = 0 causes weird bugs)
         //if (LiquidRenderer.material.GetFloat("_FillAmount") == 0)

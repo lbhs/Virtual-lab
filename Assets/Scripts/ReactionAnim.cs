@@ -65,7 +65,7 @@ public class ReactionAnim : MonoBehaviour
                     GCylinder.Rotate(0, 0, -90 * Time.deltaTime);
                 }
             }
-            if (Time.time - time > 8.5f) //if Animation is done
+            if (Time.time - time > 7.5f) //if Animation is done
             {
                 isPlaying = false;
                 StartVideo();
