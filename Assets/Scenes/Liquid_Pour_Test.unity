@@ -12965,8 +12965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367a9a11e1178744497b2f5ddbeb5010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillRate: 2
-  drainRate: 0.6
+  fillRate: 0.02
+  drainRate: 0.02
   LiquidRenderer: {fileID: 2002800134}
   BackButton: {fileID: 1346543409}
   LiquidParticle: {fileID: 1943111622}
@@ -13901,7 +13901,7 @@ PrefabInstance:
     - target: {fileID: 5897905147045249698, guid: a140c1770d96805448cb8401533520a9,
         type: 3}
       propertyPath: fillRate
-      value: 1.5
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7554433783213119420, guid: a140c1770d96805448cb8401533520a9,
         type: 3}
@@ -14522,21 +14522,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4f7d03de2202ba64da31b12dbce0deca, type: 2}
-    - target: {fileID: 3265743949670651879, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3265743949670651879, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3265743949670651879, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 3642835469029516014, guid: 1e4d9cd10a6b2484b824c1bec58c5b02,
         type: 3}
       propertyPath: m_Name
