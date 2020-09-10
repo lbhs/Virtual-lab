@@ -39,11 +39,15 @@ public class ReactionAnim : MonoBehaviour
                             item.GetComponent<Rigidbody>().useGravity = false;
                             item.GetComponent<MeshCollider>().enabled = false;
                             item.position = Vector3.MoveTowards(item.position, TargetPos.position, 3 * Time.deltaTime);
-                            MetalSound = GameObject.Find("MetalPlinkingInBeaker").GetComponent<AudioSource>();
-                            MetalSound.Play();
+                            
                         }
                         else
                         {
+                            //MetalSound = GameObject.Find("MetalPlinkingInBeaker").GetComponent<AudioSource>();
+                            if (!MetalSound.isPlaying)
+                            {
+                                MetalSound.Play();
+                            }
                             item.GetComponent<Rigidbody>().useGravity = true;
                             item.GetComponent<MeshCollider>().enabled = true;
                         }
@@ -67,7 +71,7 @@ public class ReactionAnim : MonoBehaviour
                 if (GCylinder.eulerAngles.z > 310 || GCylinder.eulerAngles.z == 0)
                 {
                     GCylinder.Rotate(0, 0, -90 * Time.deltaTime);
-                    FizzingLiquid = GameObject.Find("FizzingReaction").GetComponent<AudioSource>();
+                    //FizzingLiquid = GameObject.Find("FizzingReaction").GetComponent<AudioSource>();
                     FizzingLiquid.Play();
                 }
             }
