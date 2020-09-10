@@ -10,6 +10,7 @@ public class MetalScript : MonoBehaviour
     public bool CanMove = true;
     public Material MetalMaterial;
     public Mesh MetalMesh;
+    public AudioSource PlinkingMetal;
     //dictionary keeps track of available snapping positions with boolean to describe occupancy
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
@@ -46,6 +47,8 @@ public class MetalScript : MonoBehaviour
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 6.5f);
+            PlinkingMetal = GameObject.Find("MetalMovementSound").GetComponent<AudioSource>();
+            PlinkingMetal.Play();
         }
     }
 
@@ -67,6 +70,8 @@ public class MetalScript : MonoBehaviour
         if (CanMove)
         {
             snapIntoPosition();
+            PlinkingMetal = GameObject.Find("MetalMovementSound").GetComponent<AudioSource>();
+            PlinkingMetal.Stop();
         }
     }
 
