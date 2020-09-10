@@ -22975,7 +22975,7 @@ MonoBehaviour:
   r: {fileID: 305381414}
   flashTime: 0.25
   DarkColor: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
-  LightColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 0}
+  LightColor: {r: 0.8627451, g: 0.50980395, b: 0.29411766, a: 0}
 --- !u!114 &1951360994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22991,7 +22991,6 @@ MonoBehaviour:
   r: {fileID: 617343249}
   flashTime: 0.25
   DarkColor: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
-  LightColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 0}
 --- !u!1 &1963789157
 GameObject:
   m_ObjectHideFlags: 0
