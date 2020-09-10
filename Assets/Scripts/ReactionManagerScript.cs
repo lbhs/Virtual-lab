@@ -50,7 +50,7 @@ public class ReactionManagerScript : MonoBehaviour
             ContinueCanvasOne.SetActive(false);
         }
 
-        if (reactionState == ReactionState.inital && MetalObject == null)
+        if (reactionState == ReactionState.inital && MetalObject == null )
         {
             MassIndicator.SetActive(true);
             LiquidIndicator.SetActive(false);
