@@ -13,6 +13,8 @@ public class ReactionAnim : MonoBehaviour
     public Transform GCylinder;
     public ScaleScript Scale;
     private float time;
+    public AudioSource FizzingLiquid;
+    public AudioSource MetalSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,8 @@ public class ReactionAnim : MonoBehaviour
                             item.GetComponent<Rigidbody>().useGravity = false;
                             item.GetComponent<MeshCollider>().enabled = false;
                             item.position = Vector3.MoveTowards(item.position, TargetPos.position, 3 * Time.deltaTime);
+                            MetalSound = GameObject.Find("MetalPlinkingInBeaker").GetComponent<AudioSource>();
+                            MetalSound.Play();
                         }
                         else
                         {
@@ -63,12 +67,15 @@ public class ReactionAnim : MonoBehaviour
                 if (GCylinder.eulerAngles.z > 310 || GCylinder.eulerAngles.z == 0)
                 {
                     GCylinder.Rotate(0, 0, -90 * Time.deltaTime);
+                    FizzingLiquid = GameObject.Find("FizzingReaction").GetComponent<AudioSource>();
+                    FizzingLiquid.Play();
                 }
             }
             if (Time.time - time > 7.5f) //if Animation is done
             {
                 isPlaying = false;
                 StartVideo();
+                FizzingLiquid.Stop();
             }
 
         }
