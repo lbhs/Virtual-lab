@@ -104,14 +104,6 @@ public class ReactionAnim : MonoBehaviour
            // {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
             //}
-            //else if(MetalName == "Mg")
-            //{
-            //    GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
-            //}
-            //else if(MetalName == "Cu")
-            //{
-            //    GetComponent<PlayVideoScript>().PlayAVideo(videoNames[2]);
-            //}
         }
         else if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "Water")
         {
