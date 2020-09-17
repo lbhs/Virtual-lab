@@ -18,7 +18,7 @@ public class ReactionAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class ReactionAnim : MonoBehaviour
                             item.position = Vector3.MoveTowards(item.position, TargetPos.position, 3 * Time.deltaTime);
                             MetalSoundOnBeaker = GameObject.Find("MetalPlinkingInBeaker").GetComponent<AudioSource>();
                             MetalSoundOnBeaker.Play();
-                          
+
                         }
                         else
                         {
@@ -68,8 +68,8 @@ public class ReactionAnim : MonoBehaviour
                 if (GCylinder.eulerAngles.z > 310 || GCylinder.eulerAngles.z == 0)
                 {
                     GCylinder.Rotate(0, 0, -90 * Time.deltaTime);
-                FizzingLiquid = GameObject.Find("FizzingReaction").GetComponent<AudioSource>();
-                FizzingLiquid.Play();
+                    FizzingLiquid = GameObject.Find("FizzingReaction").GetComponent<AudioSource>();
+                    FizzingLiquid.Play();
                 }
             }
             if (Time.time - time > 7.5f) //if Animation is done
@@ -101,20 +101,31 @@ public class ReactionAnim : MonoBehaviour
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
             }
-            else if(MetalName == "Mg")
+            else if (MetalName == "Mg")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
             }
-            else if(MetalName == "Cu")
+            else if (MetalName == "Cu")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[2]);
             }
+            else if (MetalName == "Ca")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[3]);
+            }
         }
-        else //Backup
+        if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "H20")
         {
-            print("Liquid name: " + LiquidName + " Liquid Amount: " + LiquidAmount + " Metal Name: " + MetalName + " Metal Amount: " + MassAmount);
-            throw new System.ArgumentException("Error, could not meet conditions in ReactionAnim Script");
-            //GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
+            if (MetalName == "Ca")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[4]);
+            }
+        else //Backup
+            {
+                print("Liquid name: " + LiquidName + " Liquid Amount: " + LiquidAmount + " Metal Name: " + MetalName + " Metal Amount: " + MassAmount);
+                throw new System.ArgumentException("Error, could not meet conditions in ReactionAnim Script");
+                //GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
+            }
         }
     }
 }
