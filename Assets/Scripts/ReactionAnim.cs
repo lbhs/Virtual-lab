@@ -114,18 +114,18 @@ public class ReactionAnim : MonoBehaviour
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[3]);
             }
         }
-        if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "H20")
+        else if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "H20")
         {
             if (MetalName == "Ca")
             {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[4]);
             }
+        }
         else //Backup
-            {
-                print("Liquid name: " + LiquidName + " Liquid Amount: " + LiquidAmount + " Metal Name: " + MetalName + " Metal Amount: " + MassAmount);
-                throw new System.ArgumentException("Error, could not meet conditions in ReactionAnim Script");
-                //GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
-            }
+        {
+            print("Liquid name: " + LiquidName + " Liquid Amount: " + LiquidAmount + " Metal Name: " + MetalName + " Metal Amount: " + MassAmount);
+            throw new System.ArgumentException("Error, could not meet conditions in ReactionAnim Script");
+            //GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
         }
     }
 }
