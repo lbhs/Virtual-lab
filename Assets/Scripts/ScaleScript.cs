@@ -8,6 +8,7 @@ public class ScaleScript : MonoBehaviour
     public Text DisplayText;
     public GameObject[] massObjects = new GameObject[2];
     public Renderer[] metalObjects;
+    public AudioSource MetalOnScale;
     //[HideInInspector]
     // public List<GameObject> listOfObjectsOnHere = new List<GameObject>();
     //private void ontriggerenter(collider other)
@@ -38,6 +39,9 @@ public class ScaleScript : MonoBehaviour
         setRendrer(ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMaterial, ReactionManagerScript.MetalObject.GetComponent<MetalScript>().MetalMesh);
         ReactionManagerScript.MassisReady = true;
         ReactionManagerScript.MassAmount = 1;
+        MetalOnScale = GameObject.Find("MetalOnSmallScale").GetComponent<AudioSource>();
+        MetalOnScale.Play();
+        
     }
     public void setTwoGrams()
     {
