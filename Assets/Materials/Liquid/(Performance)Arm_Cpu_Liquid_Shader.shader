@@ -1,4 +1,4 @@
-﻿Shader "Unlit/SpecialFX/Liquid"
+﻿Shader "Unlit/SpecialFX/Performance_Liquid"
 {
 	Properties
 	{
