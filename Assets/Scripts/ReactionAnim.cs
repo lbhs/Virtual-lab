@@ -18,7 +18,7 @@ public class ReactionAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class ReactionAnim : MonoBehaviour
                             item.GetComponent<Rigidbody>().useGravity = false;
                             item.GetComponent<MeshCollider>().enabled = false;
                             item.position = Vector3.MoveTowards(item.position, TargetPos.position, 3 * Time.deltaTime);
-                            
+
                         }
                         else
                         {
@@ -100,14 +100,29 @@ public class ReactionAnim : MonoBehaviour
 
         if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "3M")
         {
-           // if (MetalName == "Zn")
-           // {
+            if (MetalName == "Zn")
+            {
                 GetComponent<PlayVideoScript>().PlayAVideo(videoNames[0]);
-            //}
+            }
+            else if(MetalName == "Ca")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[3]);
+            }
+            else if(MetalName == "Mg")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
+            }
+            else if(MetalName == "Cu")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[2]);
+            }
         }
         else if (LiquidAmount == 1f && MassAmount == 1 && LiquidName == "Water")
         {
-            GetComponent<PlayVideoScript>().PlayAVideo(videoNames[1]);
+            if (MetalName == "Ca")
+            {
+                GetComponent<PlayVideoScript>().PlayAVideo(videoNames[4]);
+            }
         }
         else //Backup
         {

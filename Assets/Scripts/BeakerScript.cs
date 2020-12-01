@@ -18,8 +18,8 @@ public class BeakerScript : MonoBehaviour
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
-		{new Vector3(-2f, 8.5f, 7.5f), false},
-		{new Vector3(-4f, 8.5f, 7.5f), false},
+		{new Vector3(-6f, 8.5f, 8), false},
+		{new Vector3(-4f, 8.5f, 8f), false},
 		
 		//lower shelf snapping positions
 		{new Vector3(-7f, 1.7f, 7f), false},

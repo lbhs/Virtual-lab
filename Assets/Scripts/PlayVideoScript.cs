@@ -11,7 +11,7 @@ public class PlayVideoScript : MonoBehaviour
    public void PlayAVideo(string clip)
     {
 #if UNITY_WEBGL 
-        VP.url = "https://lbhs.github.io/Games/" + "Virtual-lab" + "/StreamingAssets/" + clip;
+        VP.url = "https://interactivechemistry.org/" + "Virtual-lab" + "/StreamingAssets/" + clip;
 #else
         VP.url = System.IO.Path.Combine(Application.streamingAssetsPath, clip);
 #endif

@@ -15,9 +15,10 @@ public class MetalScript : MonoBehaviour
     public static Dictionary<Vector3, bool> snapPositions = new Dictionary<Vector3, bool>(){
 		
 		//upper shelf snapping positions
+        {new Vector3(-2f, 9.5f, 8f), false},
         {new Vector3(0f, 9.5f, 8f), false},
         {new Vector3(2f, 9.5f, 8f), false},
-        {new Vector3(3.7f, 9.5f, 8f), false},
+        {new Vector3(4f, 9.5f, 8f), false},
 		
 		//lower shelf snapping positions
         {new Vector3(6f,2.7f, 7f), false},
