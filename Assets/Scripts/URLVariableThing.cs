@@ -1,46 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
+public class combo
+{
+    public string KeyLetter;
+    public GameObject[] EnableOn;
+}
 public class URLVariableThing : MonoBehaviour
 {
-    public GameObject[] DisableOnA;
-    public GameObject[] DisableOnB;
-    public GameObject[] DisableOnC;
+    public combo[] combos;
 
     // Start is called before the first frame update
     void Start()
     {
 
 #if UNITY_EDITOR
-        string[] URL = "test.com/test?a".Split('?');
+        string[] URL = "test.com/test?ad".Split('?');
 #else
         string[] URL = Application.absoluteURL.Split('?');
 #endif
-        if (URL.Length < 2)
+        if (URL.Length < 2)//if there's no queston mark
         {
             return;
         }
 
-        if (URL[1] == "a")
+        foreach (var item in combos)
         {
-            foreach (var item in DisableOnA)
+            if (URL[1].Contains(item.KeyLetter))
             {
-                item.SetActive(false);
+                foreach (var item2 in item.EnableOn)//enable all the right ones
+                {
+                    item2.SetActive(true);
+                }
             }
-        }
-        else if (URL[1] == "b")
-        {
-            foreach (var item in DisableOnB)
+            else
             {
-                item.SetActive(false);
-            }
-        }
-        else if (URL[1] == "c")
-        {
-            foreach (var item in DisableOnC)
-            {
-                item.SetActive(false);
+                foreach (var item2 in item.EnableOn)//disable all the wrong ones
+                {
+                    item2.SetActive(false);
+                }
             }
         }
     }
